@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="18" fill="#1d3c31"/>
+  <path d="M14 43 L26 24 L35 38 L46 18 L56 43Z" fill="#f3c979"/>
+  <text x="19" y="45" font-family="Georgia, serif" font-size="28" fill="#fff7ea" font-weight="700">Π</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+      <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#9eb892"/><stop offset="1" stop-color="#1d3c31"/></linearGradient></defs>
+      <rect width="900" height="560" fill="url(#g)"/>
+      <circle cx="715" cy="115" r="70" fill="#fff7ea" opacity=".28"/>
+      <path d="M0 390 L130 190 L270 390 L420 140 L610 400 L740 245 L900 390 L900 560 L0 560Z" fill="#163026"/>
+        <path d="M0 450 C160 380 320 425 500 460 C640 488 770 455 900 420 L900 560 L0 560Z" fill="#6a8c63"/>
+      <text x="52" y="88" font-family="Georgia, serif" font-size="52" fill="#fff7ea" font-weight="700">Διαδρομές</text>
+    </svg>

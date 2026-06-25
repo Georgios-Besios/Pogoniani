@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+      <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#c06c42"/><stop offset="1" stop-color="#1d3c31"/></linearGradient></defs>
+      <rect width="900" height="560" fill="url(#g)"/>
+      <circle cx="715" cy="115" r="70" fill="#fff7ea" opacity=".28"/>
+      <g transform="translate(250 210)">
+          <rect x="0" y="110" width="260" height="160" rx="10" fill="#efe2cc"/>
+          <polygon points="-20,110 130,20 280,110" fill="#b9643e"/>
+          <rect x="48" y="172" width="62" height="98" fill="#6d4a37"/>
+          <rect x="160" y="165" width="62" height="48" fill="#274b3d"/>
+        </g>
+      <text x="52" y="88" font-family="Georgia, serif" font-size="52" fill="#fff7ea" font-weight="700">Πέτρα</text>
+    </svg>

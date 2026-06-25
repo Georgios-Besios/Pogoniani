@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+      <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#7d5b46"/><stop offset="1" stop-color="#1d3c31"/></linearGradient></defs>
+      <rect width="900" height="560" fill="url(#g)"/>
+      <circle cx="715" cy="115" r="70" fill="#fff7ea" opacity=".28"/>
+      <g transform="translate(150 140)">
+          <rect x="0" y="0" width="360" height="260" rx="20" fill="#fff7ea" opacity=".82"/>
+          <path d="M48 74h260M48 120h220M48 166h240" stroke="#1d3c31" stroke-width="18" stroke-linecap="round" opacity=".55"/>
+          <circle cx="325" cy="210" r="52" fill="#c06c42" opacity=".8"/>
+        </g>
+      <text x="52" y="88" font-family="Georgia, serif" font-size="52" fill="#fff7ea" font-weight="700">Μνήμη</text>
+    </svg>

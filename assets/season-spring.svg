@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+      <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#95bd83"/><stop offset="1" stop-color="#1d3c31"/></linearGradient></defs>
+      <rect width="900" height="560" fill="url(#g)"/>
+      <circle cx="710" cy="110" r="72" fill="#f3c979" opacity=".55"/>
+      <path d="M0 330 L150 175 L290 330 L440 130 L600 350 L760 210 L900 335 L900 560 L0 560Z" fill="#173228"/>
+      <path d="M0 415 C180 350 340 390 490 430 C650 475 785 420 900 395 L900 560 L0 560Z" fill="#5d805e"/>
+      <text x="60" y="92" font-family="Georgia, serif" font-size="54" font-weight="700" fill="#fff7ea">Άνοιξη</text>
+    </svg>
