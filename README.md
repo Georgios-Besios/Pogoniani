@@ -88,3 +88,5 @@
 - Πολυφωνικό τραγούδι και σημερινή δημογραφική εικόνα.
 
 Το PDF μπήκε στο `assets/docs/istoria-pogoniani.pdf` και εμφανίζεται στις πηγές της ιστοσελίδας.
+
+Created with Github Pages
