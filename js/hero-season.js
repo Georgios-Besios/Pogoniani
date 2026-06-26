@@ -43,6 +43,95 @@ function removeVisitPlanner() {
   });
 }
 
+function setMeta(selector, attr, value) {
+  let tag = document.head.querySelector(selector);
+  if (!tag) {
+    tag = document.createElement('meta');
+    const nameMatch = selector.match(/meta\[name="([^"]+)"\]/);
+    const propertyMatch = selector.match(/meta\[property="([^"]+)"\]/);
+    if (nameMatch) tag.setAttribute('name', nameMatch[1]);
+    if (propertyMatch) tag.setAttribute('property', propertyMatch[1]);
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute(attr, value);
+}
+
+function setLink(rel, href, extra = {}) {
+  let link = document.head.querySelector(`link[rel="${rel}"]`);
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = rel;
+    document.head.appendChild(link);
+  }
+  link.href = href;
+  Object.entries(extra).forEach(([key, value]) => link.setAttribute(key, value));
+}
+
+function applySeoEnhancements() {
+  const title = 'Πωγωνιανή / Βοστίνα - Pogoniani, Vostina, Bostina | Οδηγός χωριού Ιωαννίνων';
+  const description = 'Η επίσημη ψηφιακή πύλη για την Πωγωνιανή Ιωαννίνων, παλιά Βοστίνα: Pogoniani, Vostina, Bostina. Ιστορία, τι να δεις, Λαογραφικό Μουσείο, διαδρομή από Ιωάννινα, καιρός, φωτογραφίες και μνήμη τόπου.';
+  document.title = title;
+  setMeta('meta[name="description"]', 'content', description);
+  setMeta('meta[name="robots"]', 'content', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+  setMeta('meta[name="keywords"]', 'content', 'Πωγωνιανή, Βοστίνα, Pogoniani, Vostina, Bostina, Πωγώνι, Ιωάννινα, Ήπειρος, Λαογραφικό Μουσείο Πωγωνιανής');
+  setMeta('meta[property="og:title"]', 'content', title);
+  setMeta('meta[property="og:description"]', 'content', description);
+  setMeta('meta[property="og:url"]', 'content', 'https://pogoniani.gr/');
+  setMeta('meta[property="og:type"]', 'content', 'website');
+  setMeta('meta[property="og:locale"]', 'content', 'el_GR');
+  setMeta('meta[property="og:site_name"]', 'content', 'Πωγωνιανή / Βοστίνα');
+  setMeta('meta[name="twitter:card"]', 'content', 'summary_large_image');
+  setMeta('meta[name="twitter:title"]', 'content', title);
+  setMeta('meta[name="twitter:description"]', 'content', description);
+  setLink('canonical', 'https://pogoniani.gr/');
+  setLink('sitemap', 'https://pogoniani.gr/sitemap.xml', { type: 'application/xml' });
+
+  if (!document.getElementById('seo-aliases')) {
+    const section = document.createElement('section');
+    section.id = 'seo-aliases';
+    section.className = 'sr-only';
+    section.innerHTML = `
+      <h2>Πωγωνιανή - Pogoniani - Βοστίνα - Vostina - Bostina</h2>
+      <p>
+        Η Πωγωνιανή Ιωαννίνων, γνωστή παλαιότερα ως Βοστίνα, αναζητείται επίσης με τις λατινικές γραφές Pogoniani, Vostina και Bostina.
+        Το pogoniani.gr παρουσιάζει το χωριό της Πωγωνιανής στο Πωγώνι Ηπείρου, την ιστορία, τα μνημεία, τη φύση, το Λαογραφικό Μουσείο Πωγωνιανής,
+        τη διαδρομή Ιωάννινα - Πωγωνιανή και φωτογραφικό υλικό από τον τόπο.
+      </p>`;
+    document.body.prepend(section);
+  }
+
+  if (!document.getElementById('pogoniani-structured-data')) {
+    const jsonLd = document.createElement('script');
+    jsonLd.id = 'pogoniani-structured-data';
+    jsonLd.type = 'application/ld+json';
+    jsonLd.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Place',
+      name: 'Πωγωνιανή',
+      alternateName: ['Βοστίνα', 'Pogoniani', 'Vostina', 'Bostina'],
+      description: 'Η Πωγωνιανή, παλιά Βοστίνα, είναι ορεινό χωριό του Δήμου Πωγωνίου στον Νομό Ιωαννίνων, στην Ήπειρο.',
+      url: 'https://pogoniani.gr/',
+      image: 'https://pogoniani.gr/assets/photos/pogoniani-preview.jpg',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Πωγωνιανή',
+        addressRegion: 'Ήπειρος',
+        addressCountry: 'GR'
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 40.005,
+        longitude: 20.334
+      },
+      containedInPlace: {
+        '@type': 'AdministrativeArea',
+        name: 'Δήμος Πωγωνίου'
+      }
+    });
+    document.head.appendChild(jsonLd);
+  }
+}
+
 function insertWeatherNavLink() {
   const navMenu = document.getElementById('nav-menu');
   if (!navMenu || navMenu.querySelector('a[href="#weather"]')) return;
@@ -56,7 +145,7 @@ function insertWeatherNavLink() {
 
 const weatherStyle = document.createElement('style');
 weatherStyle.textContent = `
-  .weather-section{position:relative;overflow:hidden}.weather-shell{width:min(var(--container),calc(100% - 28px));margin:0 auto;display:grid;grid-template-columns:minmax(280px,.92fr) minmax(0,1.08fr);gap:22px;align-items:stretch}.weather-widget,.weather-forecast-card{border:1px solid var(--line);border-radius:var(--radius-lg);background:radial-gradient(circle at 18% 10%,rgba(243,201,121,.22),transparent 30%),linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.035));box-shadow:var(--shadow);backdrop-filter:blur(18px)}.weather-widget{min-height:390px;padding:clamp(24px,4vw,38px);display:grid;align-content:space-between;position:relative}.weather-widget:after{content:'';position:absolute;width:210px;height:210px;right:-70px;top:-70px;border-radius:999px;background:rgba(243,201,121,.14);filter:blur(4px)}.weather-topline{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;position:relative;z-index:1}.weather-status{padding:8px 12px;border-radius:999px;color:var(--gold);border:1px solid rgba(243,201,121,.35);background:rgba(243,201,121,.08);font-size:.82rem;font-weight:900;white-space:nowrap}.weather-main{position:relative;z-index:1}.weather-temp-row{display:flex;align-items:center;gap:18px;margin:26px 0 8px}.weather-icon{font-size:clamp(3.2rem,7vw,5.8rem);line-height:1;filter:drop-shadow(0 14px 24px rgba(0,0,0,.20))}.weather-temp{font-size:clamp(3.5rem,9vw,6.5rem);line-height:.88;letter-spacing:-.08em;color:var(--text);font-weight:1000}.weather-condition{color:var(--text);font-size:clamp(1.15rem,2.5vw,1.7rem);font-weight:950}.weather-meta{margin-top:20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;position:relative;z-index:1}.weather-meta article,.weather-day{border:1px solid var(--line);background:rgba(255,255,255,.055)}.weather-meta article{padding:14px;border-radius:18px}.weather-meta span{display:block;color:var(--muted);font-size:.78rem;font-weight:850}.weather-meta strong{display:block;margin-top:6px;color:var(--text);font-size:1.02rem}.weather-forecast-card{padding:clamp(22px,3vw,30px)}.weather-forecast-list{display:grid;gap:12px;margin-top:20px}.weather-day{display:grid;grid-template-columns:1.2fr auto auto;gap:12px;align-items:center;padding:14px 16px;border-radius:18px}.weather-day strong{color:var(--text)}.weather-day span,.weather-credit,.weather-error{color:var(--muted)}.weather-day span{font-weight:850}.weather-credit{margin-top:18px;font-size:.86rem}.weather-error{margin-top:18px}@media(max-width:900px){.weather-shell{grid-template-columns:1fr}}@media(max-width:620px){.weather-meta,.weather-day{grid-template-columns:1fr}}
+.weather-section{position:relative;overflow:hidden}.weather-shell{width:min(var(--container),calc(100% - 28px));margin:0 auto;display:grid;grid-template-columns:minmax(280px,.92fr) minmax(0,1.08fr);gap:22px;align-items:stretch}.weather-widget,.weather-forecast-card{border:1px solid var(--line);border-radius:var(--radius-lg);background:radial-gradient(circle at 18% 10%,rgba(243,201,121,.22),transparent 30%),linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.035));box-shadow:var(--shadow);backdrop-filter:blur(18px)}.weather-widget{min-height:390px;padding:clamp(24px,4vw,38px);display:grid;align-content:space-between;position:relative}.weather-widget:after{content:'';position:absolute;width:210px;height:210px;right:-70px;top:-70px;border-radius:999px;background:rgba(243,201,121,.14);filter:blur(4px)}.weather-topline{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;position:relative;z-index:1}.weather-status{padding:8px 12px;border-radius:999px;color:var(--gold);border:1px solid rgba(243,201,121,.35);background:rgba(243,201,121,.08);font-size:.82rem;font-weight:900;white-space:nowrap}.weather-main{position:relative;z-index:1}.weather-temp-row{display:flex;align-items:center;gap:18px;margin:26px 0 8px}.weather-icon{font-size:clamp(3.2rem,7vw,5.8rem);line-height:1;filter:drop-shadow(0 14px 24px rgba(0,0,0,.20))}.weather-temp{font-size:clamp(3.5rem,9vw,6.5rem);line-height:.88;letter-spacing:-.08em;color:var(--text);font-weight:1000}.weather-condition{color:var(--text);font-size:clamp(1.15rem,2.5vw,1.7rem);font-weight:950}.weather-meta{margin-top:20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;position:relative;z-index:1}.weather-meta article,.weather-day{border:1px solid var(--line);background:rgba(255,255,255,.055)}.weather-meta article{padding:14px;border-radius:18px}.weather-meta span{display:block;color:var(--muted);font-size:.78rem;font-weight:850}.weather-meta strong{display:block;margin-top:6px;color:var(--text);font-size:1.02rem}.weather-forecast-card{padding:clamp(22px,3vw,30px)}.weather-forecast-list{display:grid;gap:12px;margin-top:20px}.weather-day{display:grid;grid-template-columns:1.2fr auto auto;gap:12px;align-items:center;padding:14px 16px;border-radius:18px}.weather-day strong{color:var(--text)}.weather-day span,.weather-credit,.weather-error{color:var(--muted)}.weather-day span{font-weight:850}.weather-credit{margin-top:18px;font-size:.86rem}.weather-error{margin-top:18px}@media(max-width:900px){.weather-shell{grid-template-columns:1fr}}@media(max-width:620px){.weather-meta,.weather-day{grid-template-columns:1fr}}
 `;
 document.head.appendChild(weatherStyle);
 
@@ -95,9 +184,10 @@ function loadMuseumSectionScript(){
   document.body.appendChild(script);
 }
 
+applySeoEnhancements();
 removeVisitPlanner();
 insertWeatherNavLink();
 createWeatherSection();
 loadPogonianiWeather();
 loadMuseumSectionScript();
-window.addEventListener('load',()=>{removeVisitPlanner();loadMuseumSectionScript();});
+window.addEventListener('load',()=>{applySeoEnhancements();removeVisitPlanner();loadMuseumSectionScript();});
