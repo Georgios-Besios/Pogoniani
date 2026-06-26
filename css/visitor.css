@@ -1,0 +1,124 @@
+.visitor-grid {
+  width: min(var(--container), calc(100% - 28px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.visitor-card,
+.route-info-card,
+.route-map-card {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.visitor-card {
+  padding: 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.visitor-card span,
+.route-kicker {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.visitor-card p,
+.route-info-card p,
+.route-list li {
+  color: var(--muted);
+}
+
+.route-layout {
+  width: min(var(--container), calc(100% - 28px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.route-info-card {
+  padding: 28px;
+}
+
+.route-list {
+  margin: 22px 0 0;
+  padding-left: 22px;
+}
+
+.route-list li + li {
+  margin-top: 10px;
+}
+
+.route-actions {
+  margin-top: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.route-map-card {
+  overflow: hidden;
+  min-height: 420px;
+  position: relative;
+}
+
+.route-map-card iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border: 0;
+  display: block;
+  filter: saturate(0.95) contrast(1.03);
+}
+
+.route-note {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(14, 23, 20, 0.78);
+  color: #fff7ea;
+  font-size: 0.9rem;
+  backdrop-filter: blur(14px);
+}
+
+html[data-theme="light"] .route-note {
+  background: rgba(255, 255, 255, 0.82);
+  color: #17231e;
+}
+
+@media (max-width: 900px) {
+  .visitor-grid,
+  .route-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .route-map-card,
+  .route-map-card iframe {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 620px) {
+  .visitor-card,
+  .route-info-card {
+    padding: 20px;
+  }
+
+  .route-map-card,
+  .route-map-card iframe {
+    min-height: 320px;
+  }
+}
