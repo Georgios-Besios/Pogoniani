@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Πωγωνιανή  Βοστίνα | Διαδραστικός οδηγός χωριού</title>
-  <meta name="description" content="Μοντέρνα διαδραστική ιστοσελίδα για την Πωγωνιανή Ιωαννίνων: σύντομη ιστορία, φύση, μνημεία, gallery, διαδρομή επίσκεψης και μνήμη τόπου." />
+  <title>Πωγωνιανή / Βοστίνα | Διαδραστικός οδηγός χωριού</title>
+  <meta name="description" content="Μοντέρνα διαδραστική ιστοσελίδα για την Πωγωνιανή Ιωαννίνων: σύντομη ιστορία, τι να δεις, πώς να έρθεις, φύση, μνημεία, gallery, διαδρομή επίσκεψης και μνήμη τόπου." />
   <meta name="theme-color" content="#16251f" />
   <meta property="og:title" content="Πωγωνιανή / Βοστίνα" />
   <meta property="og:description" content="Γνωρίστε την Πωγωνιανή / Βοστίνα μέσα από πραγματικές φωτογραφίες, ιστορικά στοιχεία, φύση, πλατεία, εκκλησία, μουσείο και διαδραστική περιήγηση." />
@@ -15,6 +15,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/visitor.css" />
 </head>
 
 <body>
@@ -43,6 +44,8 @@
         <a href="#identity">Ταυτότητα</a>
         <a href="#story">Ιστορία</a>
         <a href="#explore">Εξερεύνηση</a>
+        <a href="#see">Τι να δεις</a>
+        <a href="#directions">Πώς θα έρθεις</a>
         <a href="#gallery">Gallery</a>
         <a href="#planner">Πλάνο επίσκεψης</a>
         <a href="#memory">Μνήμη</a>
@@ -72,9 +75,9 @@
             Ξεκίνα την περιήγηση
             <span>→</span>
           </a>
-          <button class="btn btn-ghost magnetic" type="button" data-open-modal="videoModal">
-            Δες την ιδέα του site
-          </button>
+          <a class="btn btn-ghost magnetic" href="#directions">
+            Δες τη διαδρομή
+          </a>
         </div>
 
         <div class="live-strip" aria-label="Γρήγορες πληροφορίες">
@@ -182,9 +185,7 @@
       <div class="section-title centered reveal">
         <p class="eyebrow">Ιστορική διαδρομή</p>
         <h2>Από τη Βοστίνα στην Πωγωνιανή</h2>
-        <p>
-          Τα σημαντικά στοιχεία, χωρίς περιττή πολυλογία.
-        </p>
+        <p>Τα σημαντικά στοιχεία, χωρίς περιττή πολυλογία.</p>
       </div>
 
       <div class="timeline-shell reveal">
@@ -205,9 +206,7 @@
         <article class="timeline-card" id="timelineCard">
           <p class="timeline-year">12ος–2ος αι. π.Χ.</p>
           <h3>Ζώνη μακράς κατοίκησης και διέλευσης</h3>
-          <p>
-            Η ευρύτερη κοιλάδα του Γορμού έχει προϊστορικούς και αρχαίους οικισμούς, τύμβους και οχυρώσεις. Η Πωγωνιανή ανήκει σε αυτό το παλιό πέρασμα του Πωγωνίου.
-          </p>
+          <p>Η ευρύτερη κοιλάδα του Γορμού έχει προϊστορικούς και αρχαίους οικισμούς, τύμβους και οχυρώσεις. Η Πωγωνιανή ανήκει σε αυτό το παλιό πέρασμα του Πωγωνίου.</p>
         </article>
       </div>
 
@@ -218,7 +217,7 @@
         </article>
         <article>
           <span>Βοστίνα</span>
-          <strong>Η πιο διαδεδομένη ερμηνεία για την προέλευση της ονομασίας Βοστίνα είναι η Σλαβική όπου ερμηνεύεται ως "Μελισσότοπος"</strong>
+          <strong>Η ετυμολογία της ονομασίας δεν είναι οριστικά τεκμηριωμένη· έχουν προταθεί διαφορετικές εκδοχές.</strong>
         </article>
         <article>
           <span>Ρόλος</span>
@@ -245,7 +244,7 @@
         </article>
         <article>
           <span>Β' Παγκόσμιος Πόλεμος</span>
-          <p>Κατά την εποποιία του 1940–1941 τα σχολικά ιδρύματα της Πωγωνιανής χρησιμοποιήθηκαν ως στρατιωτικό νοσοκομείο. Ο τόπος μας συμμετέχει ενεργά στον αγώνα για την ελευθερία.</p>
+          <p>Κατά την εποποιία του 1940–1941 τα σχολικά ιδρύματα της Πωγωνιανής χρησιμοποιήθηκαν ως στρατιωτικό νοσοκομείο.</p>
         </article>
         <article>
           <span>Σήμερα</span>
@@ -263,33 +262,98 @@
       <div class="explore-layout">
         <div class="map-stage reveal">
           <img src="assets/interactive-map.svg" alt="Διαδραστικός εικονογραφημένος χάρτης της Πωγωνιανής" />
-          <button class="map-pin active" style="--x: 48%; --y: 45%;" data-place="square" type="button" aria-label="Στάση 1: Πλατεία και κέντρο χωριού" aria-pressed="true">
-            <span>1</span>
-          </button>
-          <button class="map-pin" style="--x: 63%; --y: 36%;" data-place="church" type="button" aria-label="Στάση 2: Εκκλησία του χωριού" aria-pressed="false">
-            <span>2</span>
-          </button>
-          <button class="map-pin" style="--x: 36%; --y: 58%;" data-place="museum" type="button" aria-label="Στάση 3: Λαογραφική μνήμη" aria-pressed="false">
-            <span>3</span>
-          </button>
-          <button class="map-pin" style="--x: 72%; --y: 64%;" data-place="nature" type="button" aria-label="Στάση 4: Φύση και ορεινό τοπίο" aria-pressed="false">
-            <span>4</span>
-          </button>
+          <button class="map-pin active" style="--x: 48%; --y: 45%;" data-place="square" type="button" aria-label="Στάση 1: Πλατεία και κέντρο χωριού" aria-pressed="true"><span>1</span></button>
+          <button class="map-pin" style="--x: 63%; --y: 36%;" data-place="church" type="button" aria-label="Στάση 2: Εκκλησία του χωριού" aria-pressed="false"><span>2</span></button>
+          <button class="map-pin" style="--x: 36%; --y: 58%;" data-place="museum" type="button" aria-label="Στάση 3: Λαογραφική μνήμη" aria-pressed="false"><span>3</span></button>
+          <button class="map-pin" style="--x: 72%; --y: 64%;" data-place="nature" type="button" aria-label="Στάση 4: Φύση και ορεινό τοπίο" aria-pressed="false"><span>4</span></button>
         </div>
 
         <aside class="place-panel reveal delay-1" id="placePanel">
           <p class="eyebrow">Στάση 01</p>
           <h3>Πλατεία και κέντρο χωριού</h3>
-          <p>
-            Το φυσικό σημείο εκκίνησης για κάθε επισκέπτη. Από εδώ αρχίζει η γνωριμία με τον ρυθμό
-            του χωριού, τους δρόμους και την καθημερινή εικόνα της Πωγωνιανής.
-          </p>
+          <p>Το φυσικό σημείο εκκίνησης για κάθε επισκέπτη. Από εδώ αρχίζει η γνωριμία με τον ρυθμό του χωριού, τους δρόμους και την καθημερινή εικόνα της Πωγωνιανής.</p>
           <ul>
             <li>Ιδανικό για πρώτη βόλτα</li>
             <li>Καλή αφετηρία για φωτογραφίες</li>
             <li>Σημείο συνάντησης και προσανατολισμού</li>
           </ul>
         </aside>
+      </div>
+    </section>
+
+    <section class="section see-section" id="see">
+      <div class="section-title centered reveal">
+        <p class="eyebrow">Τι να δεις</p>
+        <h2>Τα βασικά σημεία για την πρώτη γνωριμία με την Πωγωνιανή.</h2>
+        <p>Λίγα, καθαρά και χρήσιμα σημεία για τον επισκέπτη που έρχεται πρώτη φορά στο χωριό.</p>
+      </div>
+
+      <div class="visitor-grid reveal">
+        <article class="visitor-card">
+          <span>01</span>
+          <h3>Πλατεία και κέντρο</h3>
+          <p>Το πρώτο σημείο στάσης. Από εδώ ξεκινά η βόλτα στα πέτρινα κτίρια και στους δρόμους του χωριού.</p>
+        </article>
+        <article class="visitor-card">
+          <span>02</span>
+          <h3>Άγιος Νικόλαος</h3>
+          <p>Ο κεντρικός ναός της Πωγωνιανής, δεμένος με τη θρησκευτική και κοινοτική μνήμη του τόπου.</p>
+        </article>
+        <article class="visitor-card">
+          <span>03</span>
+          <h3>Λαογραφικό Μουσείο</h3>
+          <p>Σημείο αναφοράς για την καθημερινή ζωή, την παράδοση και την υλική μνήμη του Πωγωνίου.</p>
+        </article>
+        <article class="visitor-card">
+          <span>04</span>
+          <h3>Παλιό Γυμνάσιο</h3>
+          <p>Κομμάτι της εκπαιδευτικής ιστορίας της Πωγωνιανής και της σημασίας της ως σχολικού τόπου.</p>
+        </article>
+        <article class="visitor-card">
+          <span>05</span>
+          <h3>Σεράι του Μπέη</h3>
+          <p>Οθωμανικό αρχιτεκτονικό αποτύπωμα που θυμίζει τον παλιό διοικητικό ρόλο της Βοστίνας.</p>
+        </article>
+        <article class="visitor-card">
+          <span>06</span>
+          <h3>Φύση και θέα</h3>
+          <p>Περίπατος, καθαρός αέρας και ορεινό τοπίο. Η Πωγωνιανή αξίζει και για την ηρεμία γύρω της.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section directions-section" id="directions">
+      <div class="section-title reveal">
+        <p class="eyebrow">Πώς θα έρθεις</p>
+        <h2>Διαδρομή Ιωάννινα – Πωγωνιανή.</h2>
+      </div>
+
+      <div class="route-layout reveal">
+        <div class="route-info-card">
+          <p class="route-kicker">Από Ιωάννινα</p>
+          <h3>Προς Πωγωνιανή μέσω Καλπακίου και Δελβινακίου</h3>
+          <p>
+            Η Πωγωνιανή βρίσκεται στο βορειοδυτικό τμήμα του Νομού Ιωαννίνων, κοντά στα ελληνοαλβανικά σύνορα. Η διαδρομή από τα Ιωάννινα είναι περίπου 67 χλμ.
+          </p>
+          <ol class="route-list">
+            <li>Ξεκίνα από Ιωάννινα με κατεύθυνση προς Καλπάκι.</li>
+            <li>Συνέχισε προς Δελβινάκι.</li>
+            <li>Ακολούθησε τη διαδρομή προς Πωγωνιανή.</li>
+          </ol>
+          <div class="route-actions">
+            <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1&destination=%CE%A0%CF%89%CE%B3%CF%89%CE%BD%CE%B9%CE%B1%CE%BD%CE%AE%20%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%AF%CE%BD%CF%89%CE%BD&travelmode=driving">Άνοιγμα σε Google Maps</a>
+          </div>
+        </div>
+
+        <div class="route-map-card" aria-label="Χάρτης διαδρομής Ιωάννινα προς Πωγωνιανή">
+          <iframe
+            title="Διαδρομή Ιωάννινα - Πωγωνιανή"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?f=d&amp;source=s_d&amp;saddr=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1&amp;daddr=%CE%A0%CF%89%CE%B3%CF%89%CE%BD%CE%B9%CE%B1%CE%BD%CE%AE%20%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%AF%CE%BD%CF%89%CE%BD&amp;hl=el&amp;output=embed">
+          </iframe>
+          <p class="route-note">Ο χάρτης είναι ενσωματωμένο widget Google Maps για γρήγορο προσανατολισμό.</p>
+        </div>
       </div>
     </section>
 
@@ -310,9 +374,7 @@
         <div>
           <p class="eyebrow">Άνοιξη</p>
           <h3>Πράσινο, φως και καθαρός αέρας</h3>
-          <p>
-            Η καλύτερη εποχή για ήπιους περιπάτους, φωτογραφίες και γνωριμία με το τοπίο χωρίς βιασύνη.
-          </p>
+          <p>Η καλύτερη εποχή για ήπιους περιπάτους, φωτογραφίες και γνωριμία με το τοπίο χωρίς βιασύνη.</p>
         </div>
         <img src="assets/photos/nature-mountains.jpg" loading="lazy" decoding="async" alt="Φυσικό τοπίο και βουνά κοντά στην Πωγωνιανή" />
       </div>
@@ -322,10 +384,7 @@
       <div class="section-title centered reveal">
         <p class="eyebrow">Gallery</p>
         <h2>Η Πωγωνιανή μέσα από πραγματικές φωτογραφίες.</h2>
-        <p>
-          Οι φωτογραφίες που βλέπεις εδώ είναι πραγματικές εικόνες της Πωγωνιανής: χειμώνας, πλατεία,
-          φύση, εκκλησία και Λαογραφικό Μουσείο.
-        </p>
+        <p>Οι φωτογραφίες που βλέπεις εδώ είναι πραγματικές εικόνες της Πωγωνιανής: χειμώνας, πλατεία, φύση, εκκλησία και Λαογραφικό Μουσείο.</p>
       </div>
 
       <div class="filter-bar reveal" aria-label="Φίλτρα φωτογραφιών">
@@ -467,7 +526,7 @@
           <a target="_blank" rel="noopener" href="https://efaioa.gr/?page_id=1182">Κοιλάδα Γορμού</a>
           <a target="_blank" rel="noopener" href="https://eetaa.gr/eetaa/metaboles/oikmet_details.php?id=17778">ΕΕΤΑΑ</a>
           <a target="_blank" rel="noopener" href="https://polyphoniccaravan.gr/location/pogoniani/">Πολυφωνικό Καραβάνι</a>
-          <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%CE%A0%CF%89%CE%B3%CF%89%CE%BD%CE%B9%CE%B1%CE%BD%CE%AE%20%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%AF%CE%BD%CF%89%CE%BD">Άνοιγμα χάρτη</a>
+          <a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1&destination=%CE%A0%CF%89%CE%B3%CF%89%CE%BD%CE%B9%CE%B1%CE%BD%CE%AE%20%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%AF%CE%BD%CF%89%CE%BD&travelmode=driving">Διαδρομή Ιωάννινα - Πωγωνιανή</a>
         </div>
       </div>
     </section>
