@@ -51,6 +51,7 @@ main {
 #story { order: 20; }
 #explore { order: 30; }
 #see { order: 40; }
+#folklore-museum { order: 45; }
 #directions { order: 50; }
 #weather { order: 60; }
 .season-section { order: 70; }
