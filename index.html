@@ -16,6 +16,7 @@
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/visitor.css" />
+  <link rel="stylesheet" href="css/hero-season.css" />
 </head>
 
 <body>
@@ -101,21 +102,13 @@
           <div class="phone-topbar">
             <span></span><span></span><span></span>
           </div>
-          <div class="interactive-card">
-            <img src="assets/photos/winter-path.jpg" alt="Χιονισμένος δρόμος στην Πωγωνιανή τον χειμώνα" />
+          <div class="interactive-card" id="seasonHeroCard" role="button" tabindex="0" aria-label="Χειμώνας στην Πωγωνιανή. Πάτησε για επόμενη εποχή.">
+            <img id="seasonHeroImage" src="assets/photos/winter-path.jpg" alt="Χιονισμένος δρόμος στην Πωγωνιανή τον χειμώνα" />
             <div class="card-overlay">
-              <p>Χειμωνιάτικη Πωγωνιανή</p>
-              <h2>Πραγματικές εικόνες</h2>
+              <p id="seasonHeroKicker">Χειμώνας στην Πωγωνιανή</p>
+              <h2 id="seasonHeroTitle">Χιόνι και πέτρα</h2>
+              <span class="season-card-hint">Πάτησε για αλλαγή εποχής</span>
             </div>
-            <button class="hotspot hotspot-1" type="button" data-tip="Πλατεία και κέντρο χωριού">
-              <span></span>
-            </button>
-            <button class="hotspot hotspot-2" type="button" data-tip="Πέτρινη αρχιτεκτονική">
-              <span></span>
-            </button>
-            <button class="hotspot hotspot-3" type="button" data-tip="Βουνό και φυσικό τοπίο">
-              <span></span>
-            </button>
           </div>
         </div>
       </div>
@@ -561,5 +554,6 @@
   </dialog>
 
   <script src="js/app.js"></script>
+  <script src="js/hero-season.js"></script>
 </body>
 </html>
