@@ -37,6 +37,11 @@ html[data-theme="light"] .season-card-hint {
   grid-template-columns: repeat(2, minmax(260px, 1fr));
 }
 
+#planner,
+.nav-menu a[href="#planner"] {
+  display: none !important;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -50,9 +55,8 @@ main {
 #weather { order: 60; }
 .season-section { order: 70; }
 #gallery { order: 80; }
-#planner { order: 90; }
-#memory { order: 100; }
-#sources { order: 110; }
+#memory { order: 90; }
+#sources { order: 100; }
 
 @media (max-width: 720px) {
   .quick-facts {
