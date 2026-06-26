@@ -1,0 +1,29 @@
+.interactive-card {
+  cursor: pointer;
+}
+
+.interactive-card:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 6px;
+}
+
+.interactive-card img {
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.interactive-card.is-changing img {
+  opacity: 0.45;
+  transform: scale(1.015);
+}
+
+.season-card-hint {
+  display: inline-block;
+  margin-top: 12px;
+  color: rgba(255, 247, 234, 0.74);
+  font-size: 0.86rem;
+  font-weight: 850;
+}
+
+html[data-theme="light"] .season-card-hint {
+  color: rgba(23, 35, 30, 0.72);
+}
