@@ -28,36 +28,9 @@ html[data-theme="light"] .season-card-hint {
   color: rgba(23, 35, 30, 0.72);
 }
 
-.quick-facts article:not(:nth-child(2)):not(:nth-child(5)),
-.history-card-grid {
-  display: none;
-}
-
 .quick-facts {
   grid-template-columns: repeat(2, minmax(260px, 1fr));
 }
-
-#planner,
-.nav-menu a[href="#planner"] {
-  display: none !important;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-}
-
-#identity { order: 10; }
-#story { order: 20; }
-#explore { order: 30; }
-#see { order: 40; }
-#folklore-museum { order: 45; }
-#directions { order: 50; }
-#weather { order: 60; }
-.season-section { order: 70; }
-#gallery { order: 80; }
-#memory { order: 90; }
-#sources { order: 100; }
 
 @media (max-width: 720px) {
   .quick-facts {
