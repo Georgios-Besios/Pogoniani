@@ -4,19 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Πωγωνιανή / Βοστίνα | Διαδραστικός οδηγός χωριού</title>
-  <meta name="description" content="Μοντέρνα διαδραστική ιστοσελίδα για την Πωγωνιανή Ιωαννίνων: σύντομη ιστορία, τι να δεις, πώς να έρθεις, φύση, μνημεία, gallery, διαδρομή επίσκεψης και μνήμη τόπου." />
+  <title>Πωγωνιανή / Βοστίνα (Pogoniani, Vostina, Bostina) | Ψηφιακός οδηγός</title>
+  <meta name="description" content="Ψηφιακός οδηγός για την Πωγωνιανή Ιωαννίνων, την παλιά Βοστίνα: ιστορία, αξιοθέατα, Λαογραφικό Μουσείο, διαδρομή από Ιωάννινα, ζωντανός καιρός και φωτογραφίες." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#16251f" />
-  <meta property="og:title" content="Πωγωνιανή / Βοστίνα" />
-  <meta property="og:description" content="Γνωρίστε την Πωγωνιανή / Βοστίνα μέσα από πραγματικές φωτογραφίες, ιστορικά στοιχεία, φύση, πλατεία, εκκλησία, μουσείο και διαδραστική περιήγηση." />
-  <meta property="og:image" content="assets/photos/pogoniani-preview.jpg" />
-  <meta property="og:type" content="website" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
 
+  <link rel="canonical" href="https://pogoniani.gr/" />
+  <link rel="sitemap" type="application/xml" href="https://pogoniani.gr/sitemap.xml" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" as="image" href="assets/photos/winter-path.jpg" fetchpriority="high" />
+  <link rel="preconnect" href="https://api.open-meteo.com" crossorigin />
+
+  <meta property="og:title" content="Πωγωνιανή / Βοστίνα — Ψηφιακός οδηγός" />
+  <meta property="og:description" content="Γνώρισε την Πωγωνιανή μέσα από την ιστορία, τα αξιοθέατα, το Λαογραφικό Μουσείο, τη διαδρομή και τον ζωντανό καιρό." />
+  <meta property="og:image" content="https://pogoniani.gr/assets/photos/square-main.jpg" />
+  <meta property="og:url" content="https://pogoniani.gr/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="el_GR" />
+  <meta property="og:site_name" content="Πωγωνιανή / Βοστίνα" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Πωγωνιανή / Βοστίνα — Ψηφιακός οδηγός" />
+  <meta name="twitter:description" content="Ιστορία, αξιοθέατα, Λαογραφικό Μουσείο, διαδρομή, καιρός και φωτογραφίες από την Πωγωνιανή." />
+  <meta name="twitter:image" content="https://pogoniani.gr/assets/photos/square-main.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://pogoniani.gr/#website",
+        "url": "https://pogoniani.gr/",
+        "name": "Πωγωνιανή / Βοστίνα",
+        "alternateName": ["Pogoniani", "Vostina", "Bostina"],
+        "inLanguage": "el"
+      },
+      {
+        "@type": "Place",
+        "@id": "https://pogoniani.gr/#place",
+        "name": "Πωγωνιανή",
+        "alternateName": ["Βοστίνα", "Pogoniani", "Vostina", "Bostina"],
+        "description": "Ακριτικό ορεινό χωριό του Δήμου Πωγωνίου στον Νομό Ιωαννίνων, στην Ήπειρο.",
+        "url": "https://pogoniani.gr/",
+        "image": "https://pogoniani.gr/assets/photos/square-main.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Πωγωνιανή",
+          "addressRegion": "Ήπειρος",
+          "addressCountry": "GR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 40.005,
+          "longitude": 20.334
+        },
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Δήμος Πωγωνίου"
+        }
+      }
+    ]
+  }
+  </script>
+
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/visitor.css" />
   <link rel="stylesheet" href="css/hero-season.css" />
+  <link rel="stylesheet" href="css/features.css" />
 </head>
 
 <body>
@@ -42,13 +99,13 @@
       </button>
 
       <div class="nav-menu" id="nav-menu">
-        <a href="#identity">Ταυτότητα</a>
         <a href="#story">Ιστορία</a>
         <a href="#explore">Εξερεύνηση</a>
         <a href="#see">Τι να δεις</a>
-        <a href="#directions">Πώς θα έρθεις</a>
+        <a href="#folklore-museum">Μουσείο</a>
+        <a href="#directions">Διαδρομή</a>
+        <a href="#weather">Καιρός</a>
         <a href="#gallery">Gallery</a>
-        <a href="#planner">Πλάνο επίσκεψης</a>
         <a href="#memory">Μνήμη</a>
       </div>
 
@@ -64,11 +121,11 @@
         <p class="eyebrow">Ακριτικό ορεινό χωριό της Ηπείρου</p>
         <h1 class="hero-title">
           <span class="hero-title-main">Πωγωνιανή</span>
-          <span class="hero-title-sub">Ακριτικό χωριό του Πωγωνίου</span>
+          <span class="hero-title-sub">Πωγωνιανή / Βοστίνα</span>
         </h1>
         <p class="hero-lead">
-          Μια καθαρή ψηφιακή πύλη για τον τόπο μας: η παλιά Βοστίνα,
-          η ιστορία της, η εκκλησία, η πλατεία, το μουσείο και η φύση του Πωγωνίου.
+          Ένας σύγχρονος ψηφιακός οδηγός για την παλιά Βοστίνα:
+          ιστορία, αξιοθέατα, Λαογραφικό Μουσείο, διαδρομή και φύση του Πωγωνίου.
         </p>
 
         <div class="hero-actions">
@@ -76,9 +133,7 @@
             Ξεκίνα την περιήγηση
             <span>→</span>
           </a>
-          <a class="btn btn-ghost magnetic" href="#directions">
-            Δες τη διαδρομή
-          </a>
+          <a class="btn btn-ghost magnetic" href="#directions">Δες τη διαδρομή</a>
         </div>
 
         <div class="live-strip" aria-label="Γρήγορες πληροφορίες">
@@ -99,11 +154,11 @@
 
       <div class="hero-visual reveal delay-1" data-parallax="0.10">
         <div class="phone-frame">
-          <div class="phone-topbar">
+          <div class="phone-topbar" aria-hidden="true">
             <span></span><span></span><span></span>
           </div>
           <div class="interactive-card" id="seasonHeroCard" role="button" tabindex="0" aria-label="Χειμώνας στην Πωγωνιανή. Πάτησε για επόμενη εποχή.">
-            <img id="seasonHeroImage" src="assets/photos/winter-path.jpg" alt="Χιονισμένος δρόμος στην Πωγωνιανή τον χειμώνα" />
+            <img id="seasonHeroImage" src="assets/photos/winter-path.jpg" alt="Χιονισμένος δρόμος στην Πωγωνιανή τον χειμώνα" fetchpriority="high" />
             <div class="card-overlay">
               <p id="seasonHeroKicker">Χειμώνας στην Πωγωνιανή</p>
               <h2 id="seasonHeroTitle">Χιόνι και πέτρα</h2>
@@ -153,12 +208,15 @@
             από το σημερινό του μέγεθος. Υπήρξε διοικητικό κέντρο, σχολικός τόπος και πέρασμα
             σε μια περιοχή όπου συναντιούνται Ήπειρος, σύνορο, πέτρα και μνήμη.
           </p>
+          <p>
+            Στις λατινικές γραφές συναντάται ως <strong>Pogoniani</strong>,
+            ενώ η παλιά ονομασία αποδίδεται ως <strong>Vostina</strong> ή <strong>Bostina</strong>.
+          </p>
           <div class="tag-cloud">
             <span>Ήπειρος</span>
             <span>Πωγώνι</span>
             <span>Βοστίνα</span>
-            <span>Πέτρα</span>
-            <span>Φύση</span>
+            <span>Pogoniani</span>
             <span>Παράδοση</span>
           </div>
         </div>
@@ -166,9 +224,9 @@
         <div class="tilt-card reveal delay-1" data-tilt>
           <img src="assets/photos/square-main.jpg" loading="lazy" decoding="async" alt="Η πλατεία της Πωγωνιανής με πέτρινα κτίρια και κόκκινες στέγες" />
           <div>
-            <p class="eyebrow">Digital identity</p>
+            <p class="eyebrow">Ψηφιακή ταυτότητα</p>
             <h3>Μια νέα πρόσοψη για έναν παλιό τόπο</h3>
-            <p>Σχεδιασμένη ώστε να μπορεί να εξελιχθεί σε κανονική επίσημη ιστοσελίδα κοινότητας ή συλλόγου.</p>
+            <p>Ένας ζωντανός οδηγός που μπορεί να εμπλουτίζεται με τεκμήρια, φωτογραφίες και ιστορίες κατοίκων.</p>
           </div>
         </div>
       </div>
@@ -192,7 +250,6 @@
           <button class="timeline-dot" role="tab" aria-selected="false" data-timeline="6" type="button">1913</button>
           <button class="timeline-dot" role="tab" aria-selected="false" data-timeline="7" type="button">1928</button>
           <button class="timeline-dot" role="tab" aria-selected="false" data-timeline="8" type="button">1940</button>
-          <button class="timeline-dot" role="tab" aria-selected="false" data-timeline="9" type="button">1950-2000</button>
           <button class="timeline-dot" role="tab" aria-selected="false" data-timeline="10" type="button">Σήμερα</button>
         </div>
 
@@ -205,43 +262,12 @@
 
       <div class="quick-facts reveal delay-1" aria-label="Σύντομα στοιχεία Πωγωνιανής">
         <article>
-          <span>Ονομασία</span>
-          <strong>Παλιά Βοστίνα, επίσημα Πωγωνιανή από το 1928</strong>
-        </article>
-        <article>
           <span>Βοστίνα</span>
-          <strong>Η ετυμολογία της ονομασίας δεν είναι οριστικά τεκμηριωμένη· έχουν προταθεί διαφορετικές εκδοχές.</strong>
-        </article>
-        <article>
-          <span>Ρόλος</span>
-          <strong>Έδρα του οθωμανικού καζά Πωγωνίου</strong>
-        </article>
-        <article>
-          <span>Παιδεία</span>
-          <strong>Οικοτροφείο το 1923 και Γυμνάσιο το 1924</strong>
+          <strong>Η ετυμολογία της παλιάς ονομασίας δεν είναι οριστικά τεκμηριωμένη· έχουν προταθεί διαφορετικές εκδοχές.</strong>
         </article>
         <article>
           <span>Πολιτισμός</span>
-          <strong>Πωγωνίσιο ιδίωμα και πολυφωνικό τραγούδι</strong>
-        </article>
-      </div>
-
-      <div class="history-card-grid reveal delay-2" aria-label="Σημαντικές πληροφορίες για την Πωγωνιανή">
-        <article>
-          <span>Διοίκηση</span>
-          <p>Στα τέλη του 19ου αιώνα η Βοστίνα ήταν έδρα του καζά Πωγωνίου. Το 1895 καταγράφονται 262 χανέδες και 1.323 κάτοικοι.</p>
-        </article>
-        <article>
-          <span>Μνημεία</span>
-          <p>Άγιος Νικόλαος, Παλιό Γυμνάσιο, Σεράι του Μπέη, οθωμανικός τεκές και λιθόκτιστα γεφύρια κρατούν διαφορετικά στρώματα της ιστορίας.</p>
-        </article>
-        <article>
-          <span>Β' Παγκόσμιος Πόλεμος</span>
-          <p>Κατά την εποποιία του 1940–1941 τα σχολικά ιδρύματα της Πωγωνιανής χρησιμοποιήθηκαν ως στρατιωτικό νοσοκομείο.</p>
-        </article>
-        <article>
-          <span>Σήμερα</span>
-          <p>Η Δημοτική Κοινότητα είχε 441 μόνιμους κατοίκους το 2021, σημάδι της μεγάλης δημογραφικής συρρίκνωσης της υπαίθρου.</p>
+          <strong>Πωγωνίσιο ιδίωμα και πολυφωνικό τραγούδι.</strong>
         </article>
       </div>
     </section>
@@ -257,7 +283,7 @@
           <img src="assets/interactive-map.svg" alt="Διαδραστικός εικονογραφημένος χάρτης της Πωγωνιανής" />
           <button class="map-pin active" style="--x: 48%; --y: 45%;" data-place="square" type="button" aria-label="Στάση 1: Πλατεία και κέντρο χωριού" aria-pressed="true"><span>1</span></button>
           <button class="map-pin" style="--x: 63%; --y: 36%;" data-place="church" type="button" aria-label="Στάση 2: Εκκλησία του χωριού" aria-pressed="false"><span>2</span></button>
-          <button class="map-pin" style="--x: 36%; --y: 58%;" data-place="museum" type="button" aria-label="Στάση 3: Λαογραφική μνήμη" aria-pressed="false"><span>3</span></button>
+          <button class="map-pin" style="--x: 36%; --y: 58%;" data-place="museum" type="button" aria-label="Στάση 3: Λαογραφικό Μουσείο" aria-pressed="false"><span>3</span></button>
           <button class="map-pin" style="--x: 72%; --y: 64%;" data-place="nature" type="button" aria-label="Στάση 4: Φύση και ορεινό τοπίο" aria-pressed="false"><span>4</span></button>
         </div>
 
@@ -315,6 +341,99 @@
       </div>
     </section>
 
+    <section class="section museum-section" id="folklore-museum">
+      <div class="section-title centered reveal">
+        <p class="eyebrow">Λαογραφικό Μουσείο</p>
+        <h2>Λαογραφικό Μουσείο Πωγωνιανής</h2>
+        <p>Πλήρης φωτογραφική περιήγηση στον εξωτερικό χώρο, τις αίθουσες, τις φορεσιές, τα εργαλεία και τα αντικείμενα καθημερινής ζωής.</p>
+      </div>
+
+      <div class="museum-feature reveal">
+        <div class="museum-copy">
+          <p class="eyebrow">Μνήμη της Βοστίνας</p>
+          <h3>Το χωριό μέσα από τα αντικείμενά του.</h3>
+          <p>
+            Το μουσείο παρουσιάζει τον υλικό κόσμο της Πωγωνιανής: παλιές φωτογραφίες,
+            αντικείμενα σπιτιού, αγροτικά εργαλεία, φορεσιές και τεκμήρια που κρατούν
+            ζωντανή την κοινωνική μνήμη του τόπου.
+          </p>
+          <div class="museum-highlights">
+            <article>
+              <span>Κτίριο</span>
+              <strong>Πέτρινος εξωτερικός χώρος και αυλή ενταγμένα στην αρχιτεκτονική του χωριού.</strong>
+            </article>
+            <article>
+              <span>Καθημερινότητα</span>
+              <strong>Εργαλεία, σκεύη, έπιπλα και αντικείμενα εργασίας από την παλιά ζωή του Πωγωνίου.</strong>
+            </article>
+            <article>
+              <span>Φορεσιές</span>
+              <strong>Παραδοσιακές ενδυμασίες και προθήκες που αναδεικνύουν την τοπική ταυτότητα.</strong>
+            </article>
+          </div>
+        </div>
+
+        <div class="museum-showcase" aria-live="polite">
+          <img
+            class="museum-main-img"
+            id="museumMainImg"
+            src="assets/photos/museum-pogoniani-01.svg"
+            alt="Εξωτερικός χώρος του Λαογραφικού Μουσείου Πωγωνιανής"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="museum-showcase-info">
+            <span class="museum-kicker">Περιήγηση</span>
+            <h3 id="museumMainTitle">Εξωτερικός χώρος</h3>
+            <p id="museumMainCaption">Η πρώτη εικόνα του επισκέπτη: πέτρα, αυλή και είσοδος στο Λαογραφικό Μουσείο Πωγωνιανής.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="museum-thumbs reveal" role="tablist" aria-label="Φωτογραφίες Λαογραφικού Μουσείου">
+        <button class="museum-thumb active" type="button" role="tab" aria-selected="true" data-image="assets/photos/museum-pogoniani-01.svg" data-title="Εξωτερικός χώρος" data-alt="Εξωτερικός χώρος του Λαογραφικού Μουσείου Πωγωνιανής" data-caption="Η πρώτη εικόνα του επισκέπτη: πέτρα, αυλή και είσοδος στο Λαογραφικό Μουσείο Πωγωνιανής.">
+          <img src="assets/photos/museum-pogoniani-01.svg" alt="" loading="lazy" decoding="async" />
+          <span>01 · Εξωτερικός χώρος</span>
+        </button>
+        <button class="museum-thumb" type="button" role="tab" aria-selected="false" tabindex="-1" data-image="assets/photos/museum-pogoniani-02.svg" data-title="Πέτρινη αυλή και πρόσοψη" data-alt="Πέτρινη πρόσοψη και αυλή του Λαογραφικού Μουσείου Πωγωνιανής" data-caption="Το κτίριο και η αυλή εντάσσονται φυσικά στην αρχιτεκτονική ταυτότητα της Πωγωνιανής.">
+          <img src="assets/photos/museum-pogoniani-02.svg" alt="" loading="lazy" decoding="async" />
+          <span>02 · Αυλή και πρόσοψη</span>
+        </button>
+        <button class="museum-thumb" type="button" role="tab" aria-selected="false" tabindex="-1" data-image="assets/photos/FB_IMG_1782483458036.jpg" data-title="Αίθουσα ιστορικής μνήμης" data-alt="Αίθουσα με παλιές φωτογραφίες και αντικείμενα στο Λαογραφικό Μουσείο Πωγωνιανής" data-caption="Φωτογραφίες, αρχειακό υλικό και αντικείμενα συνδέουν το χωριό με τη μνήμη των ανθρώπων του.">
+          <img src="assets/photos/FB_IMG_1782483458036.jpg" alt="" loading="lazy" decoding="async" />
+          <span>03 · Ιστορική μνήμη</span>
+        </button>
+        <button class="museum-thumb" type="button" role="tab" aria-selected="false" tabindex="-1" data-image="assets/photos/FB_IMG_1782483451491.jpg" data-title="Εργαλεία και αντικείμενα εργασίας" data-alt="Παραδοσιακά εργαλεία και μηχανές στο Λαογραφικό Μουσείο Πωγωνιανής" data-caption="Αγροτικά εργαλεία, μηχανές και σκεύη παρουσιάζουν τον κόσμο της εργασίας και της καθημερινότητας.">
+          <img src="assets/photos/FB_IMG_1782483451491.jpg" alt="" loading="lazy" decoding="async" />
+          <span>04 · Εργαλεία</span>
+        </button>
+        <button class="museum-thumb" type="button" role="tab" aria-selected="false" tabindex="-1" data-image="assets/photos/FB_IMG_1782483442914.jpg" data-title="Η κεντρική αίθουσα" data-alt="Κεντρική αίθουσα με προθήκες και φορεσιές στο Λαογραφικό Μουσείο Πωγωνιανής" data-caption="Μια συνολική εικόνα της συλλογής και της εκθεσιακής διαδρομής του μουσείου.">
+          <img src="assets/photos/FB_IMG_1782483442914.jpg" alt="" loading="lazy" decoding="async" />
+          <span>05 · Κεντρική αίθουσα</span>
+        </button>
+        <button class="museum-thumb" type="button" role="tab" aria-selected="false" tabindex="-1" data-image="assets/photos/FB_IMG_1782483436926.jpg" data-title="Όπλα και αντικείμενα μιας άλλης εποχής" data-alt="Ιστορικά όπλα σε προθήκη του Λαογραφικού Μουσείου Πωγωνιανής" data-caption="Ιστορικά αντικείμενα και όπλα από μια διαφορετική εποχή της τοπικής ζωής.">
+          <img src="assets/photos/FB_IMG_1782483436926.jpg" alt="" loading="lazy" decoding="async" />
+          <span>06 · Ιστορικά αντικείμενα</span>
+        </button>
+        <button class="museum-thumb" type="button" role="tab" aria-selected="false" tabindex="-1" data-image="assets/photos/FB_IMG_1782483431010.jpg" data-title="Φορεσιές και προθήκες" data-alt="Παραδοσιακές φορεσιές σε προθήκες του Λαογραφικού Μουσείου Πωγωνιανής" data-caption="Οι παραδοσιακές φορεσιές αναδεικνύουν την πωγωνίσια ενδυματολογική παράδοση και την τοπική αισθητική.">
+          <img src="assets/photos/FB_IMG_1782483431010.jpg" alt="" loading="lazy" decoding="async" />
+          <span>07 · Φορεσιές</span>
+        </button>
+        <button class="museum-thumb" type="button" role="tab" aria-selected="false" tabindex="-1" data-image="assets/photos/FB_IMG_1782483428771.jpg" data-title="Συλλογή ενδυμασιών" data-alt="Παραδοσιακές ενδυμασίες στο Λαογραφικό Μουσείο Πωγωνιανής" data-caption="Ενδυμασίες, προθήκες και τεκμήρια αφηγούνται διαφορετικές πλευρές της τοπικής ζωής.">
+          <img src="assets/photos/FB_IMG_1782483428771.jpg" alt="" loading="lazy" decoding="async" />
+          <span>08 · Ενδυμασίες</span>
+        </button>
+        <button class="museum-thumb" type="button" role="tab" aria-selected="false" tabindex="-1" data-image="assets/photos/FB_IMG_1782483421145.jpg" data-title="Γυναικεία φορεσιά" data-alt="Γυναικεία παραδοσιακή φορεσιά στο Λαογραφικό Μουσείο Πωγωνιανής" data-caption="Λεπτομέρειες φορεσιάς, χρωμάτων και στολισμού μέσα από την εκθεσιακή προθήκη.">
+          <img src="assets/photos/FB_IMG_1782483421145.jpg" alt="" loading="lazy" decoding="async" />
+          <span>09 · Γυναικεία φορεσιά</span>
+        </button>
+        <button class="museum-thumb" type="button" role="tab" aria-selected="false" tabindex="-1" data-image="assets/photos/FB_IMG_1782483413196.jpg" data-title="Οικιακά αντικείμενα" data-alt="Παραδοσιακά οικιακά σκεύη στο Λαογραφικό Μουσείο Πωγωνιανής" data-caption="Σκεύη και αντικείμενα σπιτιού συγκροτούν μια καθαρή εικόνα της παλιάς ζωής στο Πωγώνι.">
+          <img src="assets/photos/FB_IMG_1782483413196.jpg" alt="" loading="lazy" decoding="async" />
+          <span>10 · Οικιακή ζωή</span>
+        </button>
+      </div>
+    </section>
+
     <section class="section directions-section" id="directions">
       <div class="section-title reveal">
         <p class="eyebrow">Πώς θα έρθεις</p>
@@ -326,7 +445,8 @@
           <p class="route-kicker">Από Ιωάννινα</p>
           <h3>Προς Πωγωνιανή μέσω Καλπακίου και Δελβινακίου</h3>
           <p>
-            Η Πωγωνιανή βρίσκεται στο βορειοδυτικό τμήμα του Νομού Ιωαννίνων, κοντά στα ελληνοαλβανικά σύνορα. Η διαδρομή από τα Ιωάννινα είναι περίπου 67 χλμ.
+            Η Πωγωνιανή βρίσκεται στο βορειοδυτικό τμήμα του Νομού Ιωαννίνων,
+            κοντά στα ελληνοαλβανικά σύνορα. Η διαδρομή από τα Ιωάννινα είναι περίπου 67 χλμ.
           </p>
           <ol class="route-list">
             <li>Ξεκίνα από Ιωάννινα με κατεύθυνση προς Καλπάκι.</li>
@@ -334,7 +454,7 @@
             <li>Ακολούθησε τη διαδρομή προς Πωγωνιανή.</li>
           </ol>
           <div class="route-actions">
-            <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1&destination=%CE%A0%CF%89%CE%B3%CF%89%CE%BD%CE%B9%CE%B1%CE%BD%CE%AE%20%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%AF%CE%BD%CF%89%CE%BD&travelmode=driving">Άνοιγμα σε Google Maps</a>
+            <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;origin=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1&amp;destination=%CE%A0%CF%89%CE%B3%CF%89%CE%BD%CE%B9%CE%B1%CE%BD%CE%AE%20%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%AF%CE%BD%CF%89%CE%BD&amp;travelmode=driving">Άνοιγμα σε Google Maps</a>
           </div>
         </div>
 
@@ -343,10 +463,68 @@
             title="Διαδρομή Ιωάννινα - Πωγωνιανή"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?f=d&amp;source=s_d&amp;saddr=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1&amp;daddr=%CE%A0%CF%89%CE%B3%CF%89%CE%BD%CE%B9%CE%B1%CE%BD%CE%AE%20%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%AF%CE%BD%CF%89%CE%BD&amp;hl=el&amp;output=embed">
+            src="https://www.google.com/maps?f=d&amp;source=s_d&amp;saddr=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1&amp;daddr=%CE%A0%CF%89%CE%B3%CF%89%CE%BD%CE%B9%CE%B1%CE%BD%CE%AE%20%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%AF%CE%BD%CF%89%CE%BD&amp;hl=el&amp;output=embed">
           </iframe>
-          <p class="route-note">Ο χάρτης είναι ενσωματωμένο widget Google Maps για γρήγορο προσανατολισμό.</p>
+          <p class="route-note">Ενσωματωμένος χάρτης Google Maps για γρήγορο προσανατολισμό.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="section weather-section" id="weather">
+      <div class="section-title centered reveal">
+        <p class="eyebrow">Live Καιρός</p>
+        <h2>Ο καιρός τώρα στην Πωγωνιανή.</h2>
+        <p>Θερμοκρασία, άνεμος, υγρασία και σύντομη πρόγνωση αμέσως μετά τη διαδρομή.</p>
+      </div>
+
+      <div class="weather-shell reveal">
+        <section class="weather-widget" aria-label="Τρέχων καιρός Πωγωνιανής">
+          <div class="weather-topline">
+            <div>
+              <p class="eyebrow">Πωγωνιανή / Βοστίνα</p>
+              <h3>Τώρα στο χωριό</h3>
+            </div>
+            <span class="weather-status" id="weatherStatus" aria-live="polite">Σύνδεση...</span>
+          </div>
+
+          <div class="weather-main">
+            <div class="weather-temp-row">
+              <span class="weather-icon" id="weatherIcon" aria-hidden="true">☁️</span>
+              <strong class="weather-temp" id="weatherTemp">--°</strong>
+            </div>
+            <p class="weather-condition" id="weatherCondition">Φόρτωση καιρού...</p>
+          </div>
+
+          <div class="weather-meta">
+            <article>
+              <span>Άνεμος</span>
+              <strong id="weatherWind">-- km/h</strong>
+            </article>
+            <article>
+              <span>Υγρασία</span>
+              <strong id="weatherHumidity">--%</strong>
+            </article>
+            <article>
+              <span>Αίσθηση</span>
+              <strong id="weatherFeels">--°C</strong>
+            </article>
+          </div>
+        </section>
+
+        <aside class="weather-forecast-card" aria-label="Πρόγνωση καιρού Πωγωνιανής">
+          <div class="weather-forecast-heading">
+            <div>
+              <p class="eyebrow">Πρόγνωση</p>
+              <h3>Επόμενες ημέρες</h3>
+            </div>
+            <button class="weather-refresh" id="weatherRefresh" type="button">Ανανέωση</button>
+          </div>
+          <div class="weather-forecast-list" id="weatherForecastList" aria-live="polite">
+            <p class="weather-error">Φόρτωση πρόγνωσης...</p>
+          </div>
+          <p class="weather-credit" id="weatherUpdated">Δεδομένα καιρού από Open-Meteo.</p>
+          <noscript><p class="weather-error">Απαιτείται JavaScript για τη ζωντανή ενημέρωση του καιρού.</p></noscript>
+        </aside>
       </div>
     </section>
 
@@ -377,7 +555,7 @@
       <div class="section-title centered reveal">
         <p class="eyebrow">Gallery</p>
         <h2>Η Πωγωνιανή μέσα από πραγματικές φωτογραφίες.</h2>
-        <p>Οι φωτογραφίες που βλέπεις εδώ είναι πραγματικές εικόνες της Πωγωνιανής: χειμώνας, πλατεία, φύση, εκκλησία και Λαογραφικό Μουσείο.</p>
+        <p>Χειμώνας, πλατεία, φύση, εκκλησία και Λαογραφικό Μουσείο.</p>
       </div>
 
       <div class="filter-bar reveal" aria-label="Φίλτρα φωτογραφιών">
@@ -399,15 +577,15 @@
           <span>Χωριό τον χειμώνα</span>
         </button>
         <button class="gallery-item wide" data-category="village" data-title="Η πλατεία της Πωγωνιανής" data-image="assets/photos/square-main.jpg" type="button">
-          <img src="assets/photos/square-main.jpg" loading="lazy" decoding="async" alt="Η πλατεία της Πωγωνιανής με πέτρινα κτίρια, κόκκινες στέγες και γαλάζιο ουρανό" />
+          <img src="assets/photos/square-main.jpg" loading="lazy" decoding="async" alt="Η πλατεία της Πωγωνιανής με πέτρινα κτίρια και κόκκινες στέγες" />
           <span>Η πλατεία</span>
         </button>
         <button class="gallery-item" data-category="village" data-title="Ζωή στην πλατεία" data-image="assets/photos/square-walk.jpg" type="button">
-          <img src="assets/photos/square-walk.jpg" loading="lazy" decoding="async" alt="Ομάδα ανθρώπων περπατά στην πλατεία της Πωγωνιανής μπροστά από πέτρινο κτίριο" />
+          <img src="assets/photos/square-walk.jpg" loading="lazy" decoding="async" alt="Άνθρωποι περπατούν στην πλατεία της Πωγωνιανής" />
           <span>Ζωή στην πλατεία</span>
         </button>
         <button class="gallery-item" data-category="nature" data-title="Φύση και βουνά του Πωγωνίου" data-image="assets/photos/nature-mountains.jpg" type="button">
-          <img src="assets/photos/nature-mountains.jpg" loading="lazy" decoding="async" alt="Το φυσικό τοπίο του Πωγωνίου με χιονισμένο βουνό, δέντρα και πράσινο λιβάδι" />
+          <img src="assets/photos/nature-mountains.jpg" loading="lazy" decoding="async" alt="Φυσικό τοπίο του Πωγωνίου με βουνό, δέντρα και πράσινο" />
           <span>Φύση και βουνά</span>
         </button>
         <button class="gallery-item" data-category="church" data-title="Πέτρινη είσοδος προς την εκκλησία" data-image="assets/photos/church-01.jpg" type="button">
@@ -418,63 +596,18 @@
           <img src="assets/photos/church-02.jpg" loading="lazy" decoding="async" alt="Πέτρινη εκκλησία στην Πωγωνιανή με δέντρα στον περίβολο" />
           <span>Η εκκλησία</span>
         </button>
-        <button class="gallery-item wide" data-category="memory" data-title="Λαογραφικό Μουσείο Πωγωνιανής" data-image="assets/photos/museum-laografiko.jpg" type="button">
-          <img src="assets/photos/museum-laografiko.jpg" loading="lazy" decoding="async" alt="Το πέτρινο κτίριο του Λαογραφικού Μουσείου Πωγωνιανής" />
+        <button class="gallery-item wide" data-category="memory" data-title="Λαογραφικό Μουσείο Πωγωνιανής" data-image="assets/photos/museum-pogoniani-01.svg" type="button">
+          <img src="assets/photos/museum-pogoniani-01.svg" loading="lazy" decoding="async" alt="Το πέτρινο κτίριο του Λαογραφικού Μουσείου Πωγωνιανής" />
           <span>Λαογραφικό Μουσείο</span>
         </button>
-      </div>
-    </section>
-
-    <section class="section planner-section" id="planner">
-      <div class="section-title reveal">
-        <p class="eyebrow">Διαδραστικό πλάνο</p>
-        <h2>Φτιάξε προτεινόμενη επίσκεψη ανάλογα με τον χρόνο και το ενδιαφέρον σου.</h2>
-      </div>
-
-      <div class="planner-card reveal">
-        <div class="planner-controls">
-          <label>
-            Χρόνος επίσκεψης
-            <select id="visitDuration">
-              <option value="short">1–2 ώρες</option>
-              <option value="half">Μισή ημέρα</option>
-              <option value="full">Ολόκληρη ημέρα</option>
-            </select>
-          </label>
-
-          <label>
-            Τι σε ενδιαφέρει περισσότερο;
-            <select id="visitInterest">
-              <option value="first">Πρώτη γνωριμία</option>
-              <option value="history">Ιστορία και μνήμη</option>
-              <option value="nature">Φύση και φωτογραφίες</option>
-              <option value="family">Οικογενειακή επίσκεψη</option>
-            </select>
-          </label>
-
-          <button class="btn btn-primary" id="generatePlan" type="button">Δημιουργία πλάνου</button>
-        </div>
-
-        <div class="plan-output" id="planOutput" aria-live="polite">
-          <p class="eyebrow">Πρόταση</p>
-          <h3>Πρώτη γνωριμία σε 1–2 ώρες</h3>
-          <ol>
-            <li>Ξεκίνα από την πλατεία και περπάτησε χωρίς βιασύνη.</li>
-            <li>Στάσου σε πέτρινα σημεία και παλιά κτίσματα για φωτογραφίες.</li>
-            <li>Κλείσε τη βόλτα με άνοιγμα χάρτη για την επόμενη στάση στο Πωγώνι.</li>
-          </ol>
-        </div>
       </div>
     </section>
 
     <section class="section memory-section" id="memory">
       <div class="section-title centered reveal">
         <p class="eyebrow">Μνήμη τόπου</p>
-        <h2>Ένας ψηφιακός τοίχος για μικρές αναμνήσεις.</h2>
-        <p>
-          Δοκιμαστική λειτουργία: οι σημειώσεις αποθηκεύονται μόνο στον browser του επισκέπτη.
-          Αργότερα μπορεί να συνδεθεί με βάση δεδομένων.
-        </p>
+        <h2>Ένας προσωπικός ψηφιακός τοίχος για μικρές αναμνήσεις.</h2>
+        <p>Οι σημειώσεις αποθηκεύονται μόνο στη συσκευή του επισκέπτη και δεν αποστέλλονται σε διακομιστή.</p>
       </div>
 
       <div class="memory-board reveal">
@@ -507,10 +640,7 @@
         <div>
           <p class="eyebrow">Πηγές</p>
           <h2>Σύντομη παρουσίαση με τεκμηριωμένα στοιχεία.</h2>
-          <p>
-            Τα ιστορικά στοιχεία κρατήθηκαν σύντομα και βασίστηκαν στο αρχείο ιστορίας που δόθηκε,
-            μαζί με τοπικές, διοικητικές και πολιτισμικές πηγές.
-          </p>
+          <p>Τα ιστορικά στοιχεία βασίζονται στο αρχείο ιστορίας που δόθηκε και σε τοπικές, διοικητικές και πολιτισμικές πηγές.</p>
         </div>
 
         <div class="source-links">
@@ -519,7 +649,7 @@
           <a target="_blank" rel="noopener" href="https://efaioa.gr/?page_id=1182">Κοιλάδα Γορμού</a>
           <a target="_blank" rel="noopener" href="https://eetaa.gr/eetaa/metaboles/oikmet_details.php?id=17778">ΕΕΤΑΑ</a>
           <a target="_blank" rel="noopener" href="https://polyphoniccaravan.gr/location/pogoniani/">Πολυφωνικό Καραβάνι</a>
-          <a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1&destination=%CE%A0%CF%89%CE%B3%CF%89%CE%BD%CE%B9%CE%B1%CE%BD%CE%AE%20%CE%99%CF%89%CE%B1%CE%BD%CE%BD%CE%AF%CE%BD%CF%89%CE%BD&travelmode=driving">Διαδρομή Ιωάννινα - Πωγωνιανή</a>
+          <a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;origin=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1&amp;destination=%CE%A0%CF%89%CE%B3%CF%89%CE%BD%CE%B9%CE%B1%CE%BD%CE%AE%20%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%B1%CE%BD%CF%89%CE%BD&amp;travelmode=driving">Διαδρομή Ιωάννινα - Πωγωνιανή</a>
         </div>
       </div>
     </section>
@@ -528,7 +658,7 @@
   <footer class="footer">
     <div>
       <strong>Πωγωνιανή Ιωαννίνων</strong>
-      <p>Μοντέρνο διαδραστικό πρωτότυπο ιστοσελίδας χωριού.</p>
+      <p>Ψηφιακός οδηγός για την Πωγωνιανή / Βοστίνα.</p>
     </div>
     <div class="footer-actions">
       <a href="#top">Πάνω ↑</a>
@@ -542,18 +672,9 @@
     <h3 id="modalTitle"></h3>
   </dialog>
 
-  <dialog class="modal text-modal" id="videoModal" aria-label="Ιδέα ιστοσελίδας">
-    <button class="modal-close" type="button" aria-label="Κλείσιμο" data-close-modal>×</button>
-    <p class="eyebrow">Concept</p>
-    <h3>Μια ιστοσελίδα που δεν “λέει απλώς πληροφορίες”, αλλά ξεναγεί.</h3>
-    <p>
-      Η λογική είναι να νιώσει ο επισκέπτης ότι μπαίνει στον τόπο:
-      με διαδραστικό χάρτη, χρονογραμμή, gallery, πλάνο επίσκεψης και ψηφιακό τοίχο αναμνήσεων.
-      Όταν μπουν πραγματικές φωτογραφίες και κείμενα από ανθρώπους της Πωγωνιανής, το site θα αποκτήσει ψυχή.
-    </p>
-  </dialog>
-
   <script src="js/app.js"></script>
   <script src="js/hero-season.js"></script>
+  <script src="js/features.js"></script>
+  <script src="js/map-museum-cta.js"></script>
 </body>
 </html>
