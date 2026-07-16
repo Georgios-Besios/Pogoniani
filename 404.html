@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="el" data-theme="earth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#16251f" />
+  <title>Η σελίδα δεν βρέθηκε | Πωγωνιανή / Βοστίνα</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .not-found {
+      width: min(720px, 100%);
+      padding: clamp(28px, 6vw, 56px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .not-found strong {
+      display: block;
+      color: var(--gold);
+      font-size: clamp(4rem, 16vw, 9rem);
+      line-height: 0.9;
+    }
+    .not-found h1 {
+      margin-top: 20px;
+      font-size: clamp(2rem, 6vw, 4rem);
+    }
+    .not-found p {
+      margin: 16px auto 26px;
+      color: var(--muted);
+      max-width: 52ch;
+    }
+  </style>
+</head>
+<body>
+  <main class="not-found">
+    <strong>404</strong>
+    <h1>Αυτό το μονοπάτι δεν οδηγεί κάπου.</h1>
+    <p>Η διεύθυνση ίσως άλλαξε ή γράφτηκε λάθος. Επίστρεψε στην αρχική σελίδα της Πωγωνιανής.</p>
+    <a class="btn btn-primary" href="/">Επιστροφή στην Πωγωνιανή</a>
+  </main>
+</body>
+</html>
