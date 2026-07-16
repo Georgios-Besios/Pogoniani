@@ -1,92 +1,64 @@
-# Πωγωνιανή Ιωαννίνων — Modern Interactive Site
+# Πωγωνιανή / Βοστίνα — pogoniani.gr
 
-Αυτή είναι η πιο μοντέρνα διαδραστική έκδοση του site για την Πωγωνιανή.
+Δημόσιος ψηφιακός οδηγός για την Πωγωνιανή Ιωαννίνων, την παλιά Βοστίνα.
 
-## Τι περιλαμβάνει
+## Ζωντανή ιστοσελίδα
 
-- Hero section με animated canvas/mist effect
-- Glassmorphism navigation
-- Mobile responsive menu
-- Dark/light theme toggle με localStorage
-- Scroll progress bar
-- Scroll reveal animations
-- Animated counters
-- Interactive timeline
-- Interactive illustrated map με pins
-- Season tabs
-- Gallery με φίλτρα και lightbox modal
-- Visit planner / itinerary generator
-- Memory wall με αποθήκευση στον browser
-- Placeholder SVG visuals που αντικαθίστανται εύκολα με πραγματικές φωτογραφίες
+- https://pogoniani.gr/
+- Φιλοξενία: GitHub Pages
+- Custom domain και HTTPS: ενεργά
 
-## Πώς το ανοίγεις
+## Περιεχόμενο και λειτουργίες
 
-Άνοιξε το `index.html` με browser.
+- Responsive αρχική παρουσίαση με εναλλαγή εποχών
+- Ιστορική χρονογραμμή
+- Διαδραστικός χάρτης εμπειρίας
+- Ενότητα «Τι να δεις»
+- Πλήρης φωτογραφική παρουσίαση Λαογραφικού Μουσείου
+- Διαδρομή Ιωάννινα – Πωγωνιανή με Google Maps
+- Live καιρός και τετραήμερη πρόγνωση από Open-Meteo
+- Gallery με φίλτρα και lightbox
+- Προσωπικός τοπικός τοίχος μνήμης με `localStorage`
+- Dark/light theme
+- Βασική προσβασιμότητα και υποστήριξη reduced motion
+- Custom σελίδα 404
 
-## Πώς βάζεις πραγματικές φωτογραφίες
+## SEO
 
-1. Βάλε τις φωτογραφίες στον φάκελο `assets`.
-2. Άλλαξε τα `src` και `data-image` στα gallery items του `index.html`.
-3. Ιδανικά ονόματα:
-   - `pogoniani-panorama.jpg`
-   - `plateia.jpg`
-   - `agios-nikolaos.jpg`
-   - `laografiko.jpg`
-   - `stone-houses.jpg`
+Η σελίδα περιλαμβάνει στατικό, crawlable SEO στο `<head>`:
 
-## Για κανονική δημοσίευση
+- canonical URL
+- meta description και robots directives
+- Open Graph / Twitter metadata
+- Schema.org `WebSite` και `Place`
+- εναλλακτικές ονομασίες: Πωγωνιανή, Βοστίνα, Pogoniani, Vostina, Bostina
+- `robots.txt`
+- `sitemap.xml`
 
-Μπορεί να ανέβει άμεσα σε:
-- GitHub Pages
-- Netlify
-- Vercel
+Το domain έχει επαληθευτεί στο Google Search Console και το sitemap έχει υποβληθεί.
 
-## Σημαντικό
+## Δομή
 
-Η φόρμα μνήμης αποθηκεύει μόνο τοπικά στον browser. Για πραγματική δημόσια λειτουργία χρειάζεται backend ή υπηρεσία database.
+```text
+index.html                 Στατικό κύριο περιεχόμενο και SEO
+404.html                   Σελίδα μη εύρεσης
+css/styles.css             Βασικό design system και κύριες ενότητες
+css/visitor.css            «Τι να δεις» και διαδρομή
+css/hero-season.css        Εναλλαγή hero και μικρές ειδικές προσαρμογές
+css/features.css           Μουσείο και live καιρός
+js/app.js                  Κύριες διαδραστικές λειτουργίες
+js/hero-season.js          Εναλλαγή εποχιακής εικόνας hero
+js/features.js             Museum gallery και live weather
+assets/photos/             Φωτογραφικό υλικό
+assets/docs/               Ιστορικό αρχείο PDF
+```
 
+## Φωτογραφίες μουσείου
 
-## Έκδοση με πραγματικές φωτογραφίες
+Η ενότητα του Λαογραφικού Μουσείου χρησιμοποιεί δύο εξωτερικές εικόνες και οκτώ φωτογραφίες εσωτερικών εκθεμάτων από τον φάκελο `assets/photos/`.
 
-Προστέθηκαν οι φωτογραφίες που δόθηκαν:
+## Απόρρητο
 
-- `assets/photos/winter-path.jpg` — χιονισμένος δρόμος στην Πωγωνιανή
-- `assets/photos/winter-panorama.jpg` — χωριό και βουνό τον χειμώνα
-- `assets/photos/square-main.jpg` — πλατεία Πωγωνιανής
-- `assets/photos/square-walk.jpg` — ζωή/περίπατος στην πλατεία
-- `assets/photos/nature-mountains.jpg` — φύση και βουνά του Πωγωνίου
-- `assets/photos/museum-laografiko.jpg` — Λαογραφικό Μουσείο Πωγωνιανής
+Ο τοίχος μνήμης αποθηκεύει το κείμενο μόνο στον browser του επισκέπτη. Δεν υπάρχει backend και δεν αποστέλλονται προσωπικά δεδομένα σε βάση δεδομένων.
 
-Οι εικόνες έχουν συμπιεστεί για web χρήση, χωρίς βαριά επεξεργασία.
-
-## Διορθώσεις έκδοσης
-
-- Διορθώθηκε το responsive bug όπου το phone-frame ξαναπεριστρεφόταν σε tablet/mobile λόγω μεταγενέστερου CSS override.
-- Προστέθηκε ασφαλέστερη απόδοση του Memory Wall ώστε το κείμενο του επισκέπτη να μπαίνει ως text και όχι ως raw HTML.
-- Προστέθηκαν guards για `localStorage`, dialogs, canvas και motion effects ώστε το site να μη σπάει εύκολα σε private mode ή σε παλιότερους browsers.
-- Βελτιώθηκε το mobile menu με σωστό grid, ενεργή κατάσταση hamburger και κλείσιμο με Escape.
-- Προστέθηκαν καλύτερα focus states, `aria-selected` / `aria-pressed` σε διαδραστικά controls και fallback ώστε το περιεχόμενο να παραμένει ορατό αν αποτύχει η JavaScript.
-- Προστέθηκε lazy loading σε μη κρίσιμες εικόνες για καλύτερο αρχικό φόρτωμα.
-
-## Δεύτερη διόρθωση
-- Μικρότερο και καθαρότερο hero title: «Πωγωνιανή / Βοστίνα».
-- Προστέθηκαν δύο φωτογραφίες εκκλησίας στη gallery.
-- Προστέθηκαν σύντομα ιστορικά στοιχεία χωρίς πολυλογία.
-- Ενημερώθηκαν οι πηγές και μικρές responsive λεπτομέρειες.
-
-
-## Ενημέρωση ιστορικού περιεχομένου
-
-Προστέθηκε σύντομη, μη φλύαρη ιστορική παρουσίαση από το αρχείο «Η ιστορία της Πωγωνιανής Ιωαννίνων.pdf»:
-
-- Βοστίνα / Πωγωνιανή και μετονομασία του 1928.
-- Ρόλος ως έδρα του οθωμανικού καζά Πωγωνίου.
-- Στοιχείο 1895: 262 χανέδες και 1.323 κάτοικοι.
-- Άγιος Νικόλαος: 1872–1894.
-- Σχολικό αποτύπωμα: Ελληνικό σχολείο, Οικοτροφείο 1923, Γυμνάσιο 1924.
-- Χρήση σχολικών ιδρυμάτων ως στρατιωτικού νοσοκομείου το 1940–1941.
-- Πολυφωνικό τραγούδι και σημερινή δημογραφική εικόνα.
-
-Το PDF μπήκε στο `assets/docs/istoria-pogoniani.pdf` και εμφανίζεται στις πηγές της ιστοσελίδας.
-
-Created with Github Pages
+Δεν έχει εγκατασταθεί σύστημα analytics χωρίς προηγούμενη επιλογή υπηρεσίας, Measurement ID και κατάλληλη ενημέρωση απορρήτου.
