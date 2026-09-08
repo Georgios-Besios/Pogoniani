@@ -92,9 +92,9 @@ const weatherElements = {
   refresh: document.getElementById("weatherRefresh")
 };
 
-const WEATHER_CACHE_KEY = "pogoniani-weather-v1";
+const WEATHER_CACHE_KEY = "pogoniani-weather-v2";
 const WEATHER_CACHE_TTL = 15 * 60 * 1000;
-const weatherUrl = "https://api.open-meteo.com/v1/forecast?latitude=40.005&longitude=20.334&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Europe%2FAthens&forecast_days=4";
+const weatherUrl = "https://api.open-meteo.com/v1/forecast?latitude=40.004392&longitude=20.42283&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Europe%2FAthens&forecast_days=4";
 
 function weatherDescription(code) {
   return weatherCodeMap[code] || ["🌡️", "Καιρικές συνθήκες"];
