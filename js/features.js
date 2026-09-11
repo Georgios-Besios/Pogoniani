@@ -223,3 +223,8 @@ async function loadWeather({ force = false } = {}) {
 
 weatherElements.refresh?.addEventListener("click", () => loadWeather({ force: true }));
 loadWeather();
+
+const canonicalRouteUrl = "https://www.google.com/maps/dir/?api=1&origin=%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%B9%CE%BD%CE%B1&destination=%CE%A0%CF%89%CE%B3%CF%89%CE%BD%CE%B9%CE%B1%CE%BD%CE%AE%20%CE%99%CF%89%CE%AC%CE%BD%CE%BD%CE%AF%CE%BD%CF%89%CE%BD&travelmode=driving";
+document.querySelectorAll('a[href*="google.com/maps/dir/"]').forEach((link) => {
+  link.href = canonicalRouteUrl;
+});
