@@ -66,3 +66,61 @@ heroSeasonCard?.addEventListener("keydown", (event) => {
   event.preventDefault();
   nextHeroSeasonSlide();
 });
+
+// Repair the two exterior museum thumbnails. The old SVG wrappers were low-resolution
+// and one of them referenced an external image that browsers do not reliably render
+// when the SVG itself is used inside an <img> element.
+(function repairMuseumExteriorPhotos() {
+  const exteriorPhoto = "assets/photos/museum-laografiko.jpg";
+  const mainImage = document.getElementById("museumMainImg");
+  const thumbs = [...document.querySelectorAll(".museum-thumb")];
+
+  if (mainImage && /museum-pogoniani-0[12]\.svg$/.test(mainImage.getAttribute("src") || "")) {
+    mainImage.src = exteriorPhoto;
+    mainImage.style.objectPosition = "center";
+  }
+
+  const exteriorSettings = [
+    {
+      title: "Εξωτερικός χώρος",
+      position: "center",
+      alt: "Εξωτερικός χώρος του Λαογραφικού Μουσείου Πωγωνιανής"
+    },
+    {
+      title: "Αυλή και πρόσοψη",
+      position: "62% center",
+      alt: "Πέτρινη αυλή και πρόσοψη του Λαογραφικού Μουσείου Πωγωνιανής"
+    }
+  ];
+
+  exteriorSettings.forEach((settings, index) => {
+    const button = thumbs[index];
+    if (!button) return;
+
+    button.dataset.image = exteriorPhoto;
+    button.dataset.position = settings.position;
+    button.dataset.alt = settings.alt;
+
+    const image = button.querySelector("img");
+    if (image) {
+      image.src = exteriorPhoto;
+      image.alt = "";
+      image.style.objectPosition = settings.position;
+    }
+  });
+
+  const galleryMuseum = document.querySelector('.gallery-item[data-category="memory"]');
+  if (galleryMuseum) {
+    galleryMuseum.dataset.image = exteriorPhoto;
+    const image = galleryMuseum.querySelector("img");
+    if (image) image.src = exteriorPhoto;
+  }
+
+  thumbs.slice(0, 2).forEach((button) => {
+    button.addEventListener("click", () => {
+      window.setTimeout(() => {
+        if (mainImage) mainImage.style.objectPosition = button.dataset.position || "center";
+      }, 0);
+    });
+  });
+})();
