@@ -1,8 +1,57 @@
 const museumMainImage = document.getElementById("museumMainImg");
 const museumMainTitle = document.getElementById("museumMainTitle");
 const museumMainCaption = document.getElementById("museumMainCaption");
-const museumThumbs = [...document.querySelectorAll(".museum-thumb")];
+let museumThumbs = [...document.querySelectorAll(".museum-thumb")];
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function normalizeMuseumGallery() {
+  if (!museumMainImage || !museumMainTitle || !museumMainCaption || museumThumbs.length === 0) return;
+
+  // The first two entries represented the same exterior photograph. Keep only the
+  // useful "Αυλή και πρόσοψη" entry and make it the first stop of the gallery.
+  if (museumThumbs.length >= 2) {
+    museumThumbs[0].remove();
+    museumThumbs = museumThumbs.slice(1);
+  }
+
+  const exteriorPhoto = "assets/photos/museum-laografiko.jpg";
+  const firstThumb = museumThumbs[0];
+
+  if (firstThumb) {
+    firstThumb.dataset.image = exteriorPhoto;
+    firstThumb.dataset.title = "Αυλή και πρόσοψη";
+    firstThumb.dataset.alt = "Πέτρινη αυλή και πρόσοψη του Λαογραφικού Μουσείου Πωγωνιανής";
+    firstThumb.dataset.caption = "Το κτίριο και η αυλή εντάσσονται φυσικά στην αρχιτεκτονική ταυτότητα της Πωγωνιανής.";
+
+    const firstImage = firstThumb.querySelector("img");
+    if (firstImage) {
+      firstImage.src = exteriorPhoto;
+      firstImage.alt = "";
+      firstImage.style.objectPosition = "center";
+    }
+
+    museumMainImage.src = exteriorPhoto;
+    museumMainImage.alt = firstThumb.dataset.alt;
+    museumMainImage.style.objectPosition = "center";
+    museumMainTitle.textContent = firstThumb.dataset.title;
+    museumMainCaption.textContent = firstThumb.dataset.caption;
+  }
+
+  museumThumbs.forEach((thumb, index) => {
+    const active = index === 0;
+    thumb.classList.toggle("active", active);
+    thumb.setAttribute("aria-selected", String(active));
+    thumb.tabIndex = active ? 0 : -1;
+
+    const label = thumb.querySelector("span");
+    if (label) {
+      const cleanLabel = label.textContent.trim().replace(/^\d+\s*·\s*/, "");
+      label.textContent = `${String(index + 1).padStart(2, "0")} · ${cleanLabel}`;
+    }
+  });
+}
+
+normalizeMuseumGallery();
 
 function selectMuseumImage(button) {
   if (!button || !museumMainImage || !museumMainTitle || !museumMainCaption) return;
@@ -10,6 +59,7 @@ function selectMuseumImage(button) {
   const applyImage = () => {
     museumMainImage.src = button.dataset.image || "";
     museumMainImage.alt = button.dataset.alt || button.dataset.title || "Έκθεμα του Λαογραφικού Μουσείου Πωγωνιανής";
+    museumMainImage.style.objectPosition = button.dataset.position || "center";
     museumMainTitle.textContent = button.dataset.title || "Λαογραφικό Μουσείο Πωγωνιανής";
     museumMainCaption.textContent = button.dataset.caption || "";
     museumMainImage.classList.remove("is-changing");
