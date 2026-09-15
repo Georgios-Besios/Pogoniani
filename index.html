@@ -75,7 +75,7 @@
   <link rel="stylesheet" href="css/visitor.css" />
   <link rel="stylesheet" href="css/hero-season.css" />
   <link rel="stylesheet" href="css/features.css" />
-  <link rel="stylesheet" href="css/seasonal-v2.css" />
+  <link rel="stylesheet" href="css/seasonal-v2.css?v=20260915-layout-fix" />
 </head>
 
 <body>
@@ -154,10 +154,10 @@
         </div>
       </div>
 
-      <div class="hero-visual hero-season-stage reveal delay-1" data-parallax="0.055">
+      <div class="hero-visual hero-season-stage reveal delay-1">
         <figure class="season-portrait" id="seasonHeroCard">
           <img id="seasonHeroImage" src="assets/seasonal/autumn/river2023.webp" alt="Πεζοπορία στο δάσος του Πωγωνίου το φθινόπωρο" fetchpriority="high" />
-          <figcaption class="card-overlay">
+          <figcaption class="season-caption">
             <p id="seasonHeroKicker">Φθινόπωρο στην Πωγωνιανή</p>
             <h2 id="seasonHeroTitle">Δάσος, νερό και χρυσαφένιο φως</h2>
             <span class="season-counter" id="seasonCounter">03 / 04</span>
@@ -567,12 +567,11 @@
     <section class="section gallery-section" id="gallery">
       <div class="section-title centered reveal">
         <p class="eyebrow">Εποχικό αρχείο</p>
-        <h2>32 στιγμές από έναν τόπο που αλλάζει.</h2>
+        <h2>Κάθε εποχή, μια άλλη Πωγωνιανή.</h2>
         <p>Από την Ανάσταση και τις ανθισμένες διαδρομές έως τα καλοκαιρινά ηλιοβασιλέματα, τον Γορμό και τη χειμωνιάτικη σιωπή.</p>
       </div>
 
       <div class="filter-bar reveal" aria-label="Φίλτρα φωτογραφιών">
-        <button class="filter" aria-pressed="false" data-season-filter="all" type="button">Όλες <span>32</span></button>
         <button class="filter" aria-pressed="false" data-season-filter="spring" type="button">Άνοιξη <span>12</span></button>
         <button class="filter" aria-pressed="false" data-season-filter="summer" type="button">Καλοκαίρι <span>12</span></button>
         <button class="filter active" aria-pressed="true" data-season-filter="autumn" type="button">Φθινόπωρο <span>4</span></button>
@@ -654,8 +653,8 @@
     <h3 id="modalTitle"></h3>
   </dialog>
 
-  <script src="js/app.js"></script>
+  <script src="js/app.js?v=20260915-layout-fix"></script>
   <script src="js/features.js"></script>
-  <script src="js/seasonal-v2.js"></script>
+  <script src="js/seasonal-v2.js?v=20260915-layout-fix"></script>
 </body>
 </html>

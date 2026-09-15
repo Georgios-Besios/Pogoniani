@@ -38,132 +38,119 @@ body {
 }
 
 .hero {
-  grid-template-columns: minmax(0, .9fr) minmax(430px, 1.1fr);
-  gap: clamp(32px, 5vw, 76px);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  gap: clamp(28px, 4vw, 56px);
 }
 
 .hero-copy {
   position: relative;
   z-index: 3;
+  container-type: inline-size;
 }
 
-.hero-title-main {
+.hero .hero-title-main {
+  margin: 0;
+  font-size: clamp(1.75rem, 5vw, 4.25rem);
+  font-size: clamp(1.75rem, 12cqi, 4.25rem);
+  line-height: 1.2;
+  letter-spacing: -.035em;
+  white-space: nowrap;
   background: linear-gradient(120deg, var(--text) 30%, var(--season-accent));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
+.hero .hero-title-sub {
+  margin-top: 10px;
+  font-size: clamp(1.35rem, 2.5vw, 2.1rem);
+  line-height: 1.25;
+  letter-spacing: -.02em;
+}
+
 .hero-season-stage {
   min-width: 0;
-  position: relative;
-  padding-bottom: 76px;
+  display: grid;
+  gap: 16px;
+  width: 100%;
+  max-width: 480px;
+  margin-inline: auto;
+  padding: 0;
 }
 
 .season-portrait {
   position: relative;
-  min-height: min(67svh, 720px);
+  min-height: 0;
   margin: 0;
-  overflow: hidden;
-  border-radius: 40px 40px 128px 40px;
-  border: 1px solid rgba(255, 255, 255, .19);
-  background: #17231e;
-  box-shadow:
-    0 44px 110px rgba(0, 0, 0, .4),
-    0 0 0 1px var(--season-glow),
-    34px 34px 90px var(--season-glow);
-  isolation: isolate;
 }
 
-.season-portrait::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(180deg, transparent 42%, rgba(5, 10, 8, .82) 100%),
-    linear-gradient(90deg, rgba(5, 10, 8, .17), transparent 55%);
-  pointer-events: none;
-}
-
+.season-portrait::before,
 .season-portrait::after {
-  content: attr(data-label);
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  z-index: 2;
-  padding: 8px 13px;
-  border: 1px solid rgba(255,255,255,.24);
-  border-radius: 999px;
-  background: rgba(9,16,13,.3);
-  color: #fff;
-  font-size: .72rem;
-  font-weight: 900;
-  letter-spacing: .14em;
-  backdrop-filter: blur(12px);
+  content: none;
 }
 
 .season-portrait > img {
   width: 100%;
-  height: 100%;
-  min-height: min(67svh, 720px);
-  object-fit: cover;
-  transition: opacity .32s ease, transform .85s cubic-bezier(.2,.75,.2,1);
+  height: auto;
+  min-height: 0;
+  max-height: 36rem;
+  object-fit: contain;
+  border-radius: 18px;
+  transition: opacity .2s ease;
 }
 
 .season-portrait.is-changing > img {
-  opacity: .35;
-  transform: scale(1.045);
+  opacity: .7;
 }
 
-.season-portrait .card-overlay {
-  position: absolute;
-  inset: auto 0 0;
-  z-index: 2;
-  padding: clamp(28px, 4vw, 48px);
-  color: #fff;
+.season-caption {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 16px;
+  padding: 20px 0 0;
+  color: var(--text);
 }
 
-.season-portrait .card-overlay p {
-  margin: 0 0 8px;
+.season-caption p {
+  grid-column: 1 / -1;
+  margin: 0;
   color: var(--season-accent);
-  font-size: .76rem;
-  font-weight: 950;
-  letter-spacing: .14em;
+  font-size: .875rem;
+  font-weight: 700;
+  letter-spacing: .06em;
   text-transform: uppercase;
 }
 
-.season-portrait .card-overlay h2 {
-  max-width: 560px;
-  font-size: clamp(2rem, 4vw, 4rem);
-  letter-spacing: -.055em;
+.season-caption h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: -.015em;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
   text-wrap: balance;
 }
 
 .season-counter {
   display: block;
-  margin-top: 18px;
-  color: rgba(255,255,255,.66);
-  font-size: .78rem;
-  font-weight: 850;
-  letter-spacing: .14em;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: .875rem;
+  font-weight: 600;
+  letter-spacing: .04em;
 }
 
 .season-switcher {
-  position: absolute;
-  z-index: 4;
-  right: 18px;
-  bottom: 16px;
-  left: 18px;
+  position: static;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
   padding: 8px;
   border: 1px solid var(--line);
   border-radius: 24px;
-  background: rgba(13, 22, 18, .76);
-  box-shadow: 0 20px 54px rgba(0,0,0,.25);
-  backdrop-filter: blur(18px);
+  background: var(--bg-2);
 }
 
 .season-switcher button {
@@ -172,10 +159,10 @@ body {
   border-radius: 17px;
   padding: 13px 8px;
   background: transparent;
-  color: rgba(255,255,255,.68);
+  color: var(--muted);
   cursor: pointer;
-  font-size: .78rem;
-  font-weight: 850;
+  font-size: .875rem;
+  font-weight: 650;
   transition: .25s ease;
 }
 
@@ -187,8 +174,8 @@ body {
 }
 
 .season-switcher button:hover {
-  color: #fff;
-  background: rgba(255,255,255,.08);
+  color: var(--text);
+  background: var(--surface);
 }
 
 .season-switcher button[aria-selected="true"] {
@@ -274,8 +261,8 @@ html[data-season="summer"] .season-particle {
 
 .season-editorial {
   display: grid;
-  grid-template-columns: minmax(280px, .78fr) minmax(0, 1.22fr);
-  gap: clamp(28px, 6vw, 80px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(24px, 4vw, 56px);
   align-items: center;
   padding: clamp(26px, 5vw, 64px);
   border: 1px solid var(--line);
@@ -289,25 +276,33 @@ html[data-season="summer"] .season-particle {
 .season-editorial-copy {
   position: relative;
   z-index: 2;
+  min-width: 0;
 }
 
 .season-index {
   margin: 0 0 18px;
   color: var(--season-accent);
-  font-size: .75rem;
-  font-weight: 950;
-  letter-spacing: .17em;
+  font-size: .875rem;
+  font-weight: 700;
+  letter-spacing: .08em;
 }
 
 .season-editorial-copy h3 {
   margin-bottom: 20px;
-  font-size: clamp(2.6rem, 5.2vw, 5.8rem);
+  font-size: clamp(1.85rem, 3.2vw, 3rem);
+  font-weight: 650;
+  line-height: 1.22;
+  letter-spacing: -.025em;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
   text-wrap: balance;
 }
 
 .season-editorial-copy > p:not(.season-index) {
   color: var(--muted);
   font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.75;
 }
 
 .season-facts {
@@ -322,8 +317,8 @@ html[data-season="summer"] .season-particle {
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--muted);
-  font-size: .78rem;
-  font-weight: 800;
+  font-size: .875rem;
+  font-weight: 600;
 }
 
 .season-editorial .btn-primary {
@@ -384,46 +379,52 @@ html[data-season="summer"] .season-particle {
 }
 
 .seasonal-gallery {
-  grid-auto-flow: dense;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: row;
+  grid-auto-rows: auto;
+  align-items: stretch;
 }
 
 .seasonal-gallery .gallery-item {
-  min-height: 320px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--bg-2);
   animation: gallery-arrive .48s both;
 }
 
-.seasonal-gallery .gallery-item:nth-child(5n + 1) {
-  grid-row: span 2;
-}
-
-.seasonal-gallery .gallery-item:nth-child(7n + 3) {
-  grid-column: span 2;
-}
-
+/* The legacy ::after covers the entire tile. Do not reuse it as a
+   backdrop-filtered season badge: that blurs the photo itself. */
 .seasonal-gallery .gallery-item::after {
-  content: attr(data-season-label);
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  padding: 6px 9px;
-  border: 1px solid rgba(255,255,255,.24);
-  border-radius: 999px;
-  background: rgba(8,13,11,.42);
-  color: #fff;
-  font-size: .65rem;
-  font-weight: 900;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  backdrop-filter: blur(10px);
+  content: none;
 }
 
-.seasonal-gallery .gallery-item img {
-  transition: transform .7s cubic-bezier(.2,.75,.2,1), filter .3s ease;
-}
-
+.seasonal-gallery .gallery-item img,
 .seasonal-gallery .gallery-item:hover img {
-  transform: scale(1.055);
-  filter: saturate(1.08);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  filter: none;
+  transform: none;
+}
+
+.seasonal-gallery .gallery-item span {
+  position: static;
+  display: block;
+  min-height: 4.5rem;
+  padding: 16px;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.seasonal-gallery .gallery-item:hover {
+  border-color: var(--season-accent);
 }
 
 .gallery-status {
@@ -445,35 +446,16 @@ html[data-season="summer"] .season-particle {
     padding-top: 132px;
   }
 
-  .hero-season-stage {
-    width: min(720px, 100%);
-    margin: 0 auto;
-  }
-
-  .season-portrait,
-  .season-portrait > img {
-    min-height: 610px;
-  }
-
   .season-editorial {
     grid-template-columns: 1fr;
+  }
+
+  .seasonal-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 680px) {
-  .hero-season-stage {
-    padding-bottom: 126px;
-  }
-
-  .season-portrait,
-  .season-portrait > img {
-    min-height: 520px;
-  }
-
-  .season-portrait {
-    border-radius: 28px 28px 74px 28px;
-  }
-
   .season-switcher {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -503,21 +485,10 @@ html[data-season="summer"] .season-particle {
     height: 205px;
   }
 
-  .seasonal-gallery {
-    grid-template-columns: 1fr 1fr;
-  }
+}
 
-  .seasonal-gallery .gallery-item,
-  .seasonal-gallery .gallery-item:nth-child(n) {
-    min-height: 245px;
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-
-  .seasonal-gallery .gallery-item:nth-child(5n + 1) {
-    grid-column: span 2;
-    min-height: 360px;
-  }
+@media (max-width: 520px) {
+  .seasonal-gallery { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

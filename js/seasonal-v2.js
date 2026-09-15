@@ -146,7 +146,8 @@
 
   function updateGallery(filter) {
     if (!gallery) return;
-    const shown = filter === "all" ? photos : photos.filter(([season]) => season === filter);
+    if (!seasonOrder.includes(filter)) return;
+    const shown = photos.filter(([season]) => season === filter);
     gallery.innerHTML = shown.map(([season, name, title, alt], index) => {
       const data = seasonalData[season];
       return `
@@ -156,7 +157,7 @@
         </button>`;
     }).join("");
 
-    const filterLabel = filter === "all" ? "Όλες οι εποχές" : seasonalData[filter].label;
+    const filterLabel = seasonalData[filter].label;
     if (galleryStatus) galleryStatus.textContent = `${shown.length} φωτογραφίες — ${filterLabel}`;
 
     gallery.querySelectorAll(".gallery-item").forEach((item) => {
@@ -165,9 +166,7 @@
         modalImage.src = item.dataset.image || "";
         modalImage.alt = item.querySelector("img")?.alt || "Φωτογραφία από την Πωγωνιανή";
         modalTitle.textContent = item.dataset.title || "Πωγωνιανή";
-        if (typeof modal.showModal === "function") modal.showModal();
-        else modal.setAttribute("open", "");
-        document.body.classList.add("modal-open");
+        openDialog(modal);
       });
     });
   }
@@ -244,7 +243,6 @@
   });
 
   document.querySelectorAll("[data-season-filter]").forEach((button) => {
-    button.dataset.filter = button.dataset.seasonFilter;
     button.addEventListener("click", () => selectGalleryFilter(button.dataset.seasonFilter));
   });
 
@@ -262,19 +260,6 @@
     ).join("");
     document.body.prepend(atmosphere);
   }
-
-  let pointerFrame = null;
-  heroCard?.addEventListener("pointermove", (event) => {
-    if (reduceMotion || !matchMedia("(hover: hover)").matches) return;
-    cancelAnimationFrame(pointerFrame);
-    pointerFrame = requestAnimationFrame(() => {
-      const rect = heroCard.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - .5;
-      const y = (event.clientY - rect.top) / rect.height - .5;
-      heroCard.style.transform = `perspective(1100px) rotateY(${x * 3.5}deg) rotateX(${y * -3.5}deg)`;
-    });
-  });
-  heroCard?.addEventListener("pointerleave", () => { heroCard.style.transform = ""; });
 
   setSeason(readSeason());
 })();
