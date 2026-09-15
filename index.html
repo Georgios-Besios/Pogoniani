@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="el" data-theme="earth">
+<html lang="el" data-theme="earth" data-season="autumn">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +14,7 @@
   <link rel="canonical" href="https://pogoniani.gr/" />
   <link rel="sitemap" type="application/xml" href="https://pogoniani.gr/sitemap.xml" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="preload" as="image" href="assets/photos/winter-path.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/seasonal/autumn/river2023.webp" fetchpriority="high" />
   <link rel="preconnect" href="https://api.open-meteo.com" crossorigin />
 
   <meta property="og:title" content="Πωγωνιανή / Βοστίνα — Η ιστοσελίδα μας!" />
@@ -75,6 +75,7 @@
   <link rel="stylesheet" href="css/visitor.css" />
   <link rel="stylesheet" href="css/hero-season.css" />
   <link rel="stylesheet" href="css/features.css" />
+  <link rel="stylesheet" href="css/seasonal-v2.css" />
 </head>
 
 <body>
@@ -153,19 +154,21 @@
         </div>
       </div>
 
-      <div class="hero-visual reveal delay-1" data-parallax="0.10">
-        <div class="phone-frame">
-          <div class="phone-topbar" aria-hidden="true">
-            <span></span><span></span><span></span>
-          </div>
-          <div class="interactive-card" id="seasonHeroCard" role="button" tabindex="0" aria-label="Χειμώνας στην Πωγωνιανή. Πάτησε για επόμενη εποχή.">
-            <img id="seasonHeroImage" src="assets/photos/winter-path.jpg" alt="Χιονισμένος δρόμος στην Πωγωνιανή τον χειμώνα" fetchpriority="high" />
-            <div class="card-overlay">
-              <p id="seasonHeroKicker">Χειμώνας στην Πωγωνιανή</p>
-              <h2 id="seasonHeroTitle">Χιόνι και πέτρα</h2>
-              <span class="season-card-hint">Πάτησε για αλλαγή εποχής</span>
-            </div>
-          </div>
+      <div class="hero-visual hero-season-stage reveal delay-1" data-parallax="0.055">
+        <figure class="season-portrait" id="seasonHeroCard">
+          <img id="seasonHeroImage" src="assets/seasonal/autumn/river2023.webp" alt="Πεζοπορία στο δάσος του Πωγωνίου το φθινόπωρο" fetchpriority="high" />
+          <figcaption class="card-overlay">
+            <p id="seasonHeroKicker">Φθινόπωρο στην Πωγωνιανή</p>
+            <h2 id="seasonHeroTitle">Δάσος, νερό και χρυσαφένιο φως</h2>
+            <span class="season-counter" id="seasonCounter">03 / 04</span>
+          </figcaption>
+        </figure>
+
+        <div class="season-switcher" role="tablist" aria-label="Διάλεξε εποχή">
+          <button type="button" role="tab" data-set-season="spring" aria-selected="false"><span>01</span> Άνοιξη</button>
+          <button type="button" role="tab" data-set-season="summer" aria-selected="false"><span>02</span> Καλοκαίρι</button>
+          <button type="button" role="tab" data-set-season="autumn" aria-selected="true"><span>03</span> Φθινόπωρο</button>
+          <button type="button" role="tab" data-set-season="winter" aria-selected="false"><span>04</span> Χειμώνας</button>
         </div>
       </div>
 
@@ -529,79 +532,57 @@
       </div>
     </section>
 
-    <section class="section season-section">
+    <section class="section season-section seasonal-story" id="seasons">
       <div class="section-title centered reveal">
-        <p class="eyebrow">Εποχές</p>
-        <h2>Η Πωγωνιανή αλλάζει πρόσωπο μέσα στον χρόνο.</h2>
+        <p class="eyebrow">Ένας τόπος — τέσσερις κόσμοι</p>
+        <h2>Η Πωγωνιανή δεν έχει μία μόνο όψη.</h2>
+        <p>Διάλεξε εποχή και δες το τοπίο, τα χρώματα και τον ρυθμό του χωριού να μεταμορφώνονται.</p>
       </div>
 
-      <div class="season-tabs reveal" role="tablist" aria-label="Εποχές">
-        <button class="season-tab active" role="tab" aria-selected="true" data-season="spring" type="button">Άνοιξη</button>
-        <button class="season-tab" role="tab" aria-selected="false" data-season="summer" type="button">Καλοκαίρι</button>
-        <button class="season-tab" role="tab" aria-selected="false" data-season="autumn" type="button">Φθινόπωρο</button>
-        <button class="season-tab" role="tab" aria-selected="false" data-season="winter" type="button">Χειμώνας</button>
+      <div class="season-tabs season-tabs-v2 reveal" role="tablist" aria-label="Εποχές">
+        <button class="season-tab" role="tab" aria-selected="false" data-set-season="spring" type="button"><span>01</span> Άνοιξη</button>
+        <button class="season-tab" role="tab" aria-selected="false" data-set-season="summer" type="button"><span>02</span> Καλοκαίρι</button>
+        <button class="season-tab active" role="tab" aria-selected="true" data-set-season="autumn" type="button"><span>03</span> Φθινόπωρο</button>
+        <button class="season-tab" role="tab" aria-selected="false" data-set-season="winter" type="button"><span>04</span> Χειμώνας</button>
       </div>
 
-      <div class="season-card reveal" id="seasonCard">
-        <div>
-          <p class="eyebrow">Άνοιξη</p>
-          <h3>Πράσινο, φως και καθαρός αέρας</h3>
-          <p>Η καλύτερη εποχή για ήπιους περιπάτους, φωτογραφίες και γνωριμία με το τοπίο χωρίς βιασύνη.</p>
+      <div class="season-editorial reveal" id="seasonExperience" aria-live="polite">
+        <div class="season-editorial-copy">
+          <p class="season-index" id="seasonIndex">03 — ΦΘΙΝΟΠΩΡΟ</p>
+          <h3 id="seasonExperienceTitle">Το νερό δείχνει τον δρόμο.</h3>
+          <p id="seasonExperienceText">Στις διαδρομές του Γορμού, κάτω από τον πυκνό ίσκιο, η φύση γίνεται πιο ήσυχη και πιο βαθιά.</p>
+          <div class="season-facts" id="seasonFacts">
+            <span>Πεζοπορία</span><span>Γορμός</span><span>Δάσος</span>
+          </div>
+          <button class="btn btn-primary" id="openSeasonGallery" type="button">Δες το φθινόπωρο <span>→</span></button>
         </div>
-        <img src="assets/photos/nature-mountains.jpg" loading="lazy" decoding="async" alt="Φυσικό τοπίο και βουνά κοντά στην Πωγωνιανή" />
+        <div class="season-collage">
+          <img id="seasonMainImage" class="season-main-image" src="assets/seasonal/autumn/river2023.webp" loading="lazy" decoding="async" alt="Πεζοπορία στο δάσος του Πωγωνίου" />
+          <img id="seasonDetailImage" class="season-detail-image" src="assets/seasonal/autumn/river4.webp" loading="lazy" decoding="async" alt="Νερά του ποταμού Γορμού" />
+          <p class="season-photo-note" id="seasonPhotoNote">Διαδρομές κοντά στον Γορμό</p>
+        </div>
       </div>
     </section>
 
     <section class="section gallery-section" id="gallery">
       <div class="section-title centered reveal">
-        <p class="eyebrow">Gallery</p>
-        <h2>Η Πωγωνιανή μέσα από πραγματικές φωτογραφίες.</h2>
-        <p>Χειμώνας, πλατεία, φύση, εκκλησία και Λαογραφικό Μουσείο.</p>
+        <p class="eyebrow">Εποχικό αρχείο</p>
+        <h2>32 στιγμές από έναν τόπο που αλλάζει.</h2>
+        <p>Από την Ανάσταση και τις ανθισμένες διαδρομές έως τα καλοκαιρινά ηλιοβασιλέματα, τον Γορμό και τη χειμωνιάτικη σιωπή.</p>
       </div>
 
       <div class="filter-bar reveal" aria-label="Φίλτρα φωτογραφιών">
-        <button class="filter active" aria-pressed="true" data-filter="all" type="button">Όλα</button>
-        <button class="filter" aria-pressed="false" data-filter="winter" type="button">Χειμώνας</button>
-        <button class="filter" aria-pressed="false" data-filter="village" type="button">Πλατεία</button>
-        <button class="filter" aria-pressed="false" data-filter="nature" type="button">Φύση</button>
-        <button class="filter" aria-pressed="false" data-filter="church" type="button">Εκκλησία</button>
-        <button class="filter" aria-pressed="false" data-filter="memory" type="button">Μουσείο</button>
+        <button class="filter" aria-pressed="false" data-season-filter="all" type="button">Όλες <span>32</span></button>
+        <button class="filter" aria-pressed="false" data-season-filter="spring" type="button">Άνοιξη <span>12</span></button>
+        <button class="filter" aria-pressed="false" data-season-filter="summer" type="button">Καλοκαίρι <span>12</span></button>
+        <button class="filter active" aria-pressed="true" data-season-filter="autumn" type="button">Φθινόπωρο <span>4</span></button>
+        <button class="filter" aria-pressed="false" data-season-filter="winter" type="button">Χειμώνας <span>4</span></button>
       </div>
 
-      <div class="gallery-grid reveal" id="galleryGrid">
-        <button class="gallery-item tall" data-category="winter" data-title="Χειμωνιάτικος δρόμος στην Πωγωνιανή" data-image="assets/photos/winter-path.jpg" type="button">
-          <img src="assets/photos/winter-path.jpg" loading="lazy" decoding="async" alt="Χιονισμένος δρόμος με πέτρινες μάντρες και δέντρα στην Πωγωνιανή" />
-          <span>Χειμωνιάτικος δρόμος</span>
-        </button>
-        <button class="gallery-item" data-category="winter" data-title="Χωριό και βουνό τον χειμώνα" data-image="assets/photos/winter-panorama.jpg" type="button">
-          <img src="assets/photos/winter-panorama.jpg" loading="lazy" decoding="async" alt="Χειμερινή άποψη της Πωγωνιανής με βουνό στο βάθος" />
-          <span>Χωριό τον χειμώνα</span>
-        </button>
-        <button class="gallery-item wide" data-category="village" data-title="Η πλατεία της Πωγωνιανής" data-image="assets/photos/square-main.jpg" type="button">
-          <img src="assets/photos/square-main.jpg" loading="lazy" decoding="async" alt="Η πλατεία της Πωγωνιανής με πέτρινα κτίρια και κόκκινες στέγες" />
-          <span>Η πλατεία</span>
-        </button>
-        <button class="gallery-item" data-category="village" data-title="Ζωή στην πλατεία" data-image="assets/photos/square-walk.jpg" type="button">
-          <img src="assets/photos/square-walk.jpg" loading="lazy" decoding="async" alt="Άνθρωποι περπατούν στην πλατεία της Πωγωνιανής" />
-          <span>Ζωή στην πλατεία</span>
-        </button>
-        <button class="gallery-item" data-category="nature" data-title="Φύση και βουνά του Πωγωνίου" data-image="assets/photos/nature-mountains.jpg" type="button">
-          <img src="assets/photos/nature-mountains.jpg" loading="lazy" decoding="async" alt="Φυσικό τοπίο του Πωγωνίου με βουνό, δέντρα και πράσινο" />
-          <span>Φύση και βουνά</span>
-        </button>
-        <button class="gallery-item" data-category="church" data-title="Πέτρινη είσοδος προς την εκκλησία" data-image="assets/photos/church-01.jpg" type="button">
-          <img src="assets/photos/church-01.jpg" loading="lazy" decoding="async" alt="Πέτρινη είσοδος και σκαλιά προς την εκκλησία της Πωγωνιανής" />
-          <span>Είσοδος εκκλησίας</span>
-        </button>
-        <button class="gallery-item" data-category="church" data-title="Η εκκλησία της Πωγωνιανής" data-image="assets/photos/church-02.jpg" type="button">
-          <img src="assets/photos/church-02.jpg" loading="lazy" decoding="async" alt="Πέτρινη εκκλησία στην Πωγωνιανή με δέντρα στον περίβολο" />
-          <span>Η εκκλησία</span>
-        </button>
-        <button class="gallery-item wide" data-category="memory" data-title="Λαογραφικό Μουσείο Πωγωνιανής" data-image="assets/photos/museum-pogoniani-01.svg" type="button">
-          <img src="assets/photos/museum-pogoniani-01.svg" loading="lazy" decoding="async" alt="Το πέτρινο κτίριο του Λαογραφικού Μουσείου Πωγωνιανής" />
-          <span>Λαογραφικό Μουσείο</span>
-        </button>
+      <div class="gallery-grid seasonal-gallery reveal" id="galleryGrid" aria-live="polite">
+        <!-- Οι 32 φωτογραφίες δημιουργούνται από το seasonal-v2.js ώστε το φίλτρο να παραμένει άμεσο και προσβάσιμο. -->
       </div>
+      <p class="gallery-status" id="galleryStatus">4 φωτογραφίες — Φθινόπωρο</p>
     </section>
 
     <section class="section memory-section" id="memory">
@@ -674,7 +655,7 @@
   </dialog>
 
   <script src="js/app.js"></script>
-  <script src="js/hero-season.js"></script>
   <script src="js/features.js"></script>
+  <script src="js/seasonal-v2.js"></script>
 </body>
 </html>
