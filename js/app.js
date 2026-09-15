@@ -373,7 +373,7 @@ document.querySelectorAll(".season-tab").forEach((tab) => {
   });
 });
 
-document.querySelectorAll(".filter").forEach((filter) => {
+document.querySelectorAll(".filter[data-filter]").forEach((filter) => {
   filter.addEventListener("click", () => {
     document.querySelectorAll(".filter").forEach((item) => {
       item.classList.remove("active");
